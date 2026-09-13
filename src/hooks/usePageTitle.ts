@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const DEFAULT_LOGO_PATH = '/og-image.png';
+const LOGO_ABSOLUTE_URL = 'https://raw.githubusercontent.com/filipmrbg/J-M-leri-hus/main/public/og-image.png';
 
 export function usePageTitle(title: string, description?: string) {
   const { pathname } = useLocation();
@@ -43,7 +43,7 @@ export function usePageTitle(title: string, description?: string) {
       ? window.location.origin
       : 'https://jmaleri.se';
     const absoluteUrl = `${origin}${pathname === '/' ? '' : pathname}`;
-    const absoluteOgImage = `${origin}${DEFAULT_LOGO_PATH}`;
+    const absoluteOgImage = LOGO_ABSOLUTE_URL;
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
