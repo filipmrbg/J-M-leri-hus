@@ -67,11 +67,11 @@ export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
 
-  // Auto-advance slideshow every 5s
+  // Auto-advance slideshow every 4s
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
