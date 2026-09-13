@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MapPin, Mail } from 'lucide-react';
+import { Phone, MapPin, Mail, ShieldCheck } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import FAQAccordion from '../components/FAQAccordion';
 import CTABanner from '../components/CTABanner';
@@ -13,7 +13,7 @@ const container: React.CSSProperties = {
 
 const faqItems = [
   {
-    question: 'Arbetar ni med ROT-avdrag?',
+    question: 'Arbetar ni med ROT avdrag?',
     answer: 'Ja! Som privatperson får du 30 % avdrag på arbetskostnaden direkt på fakturan upp till 50 000 kr per person och år. Vi sköter all administration mot Skatteverket.',
   },
   {
@@ -21,12 +21,12 @@ const faqItems = [
     answer: 'Vi återkopplar vanligtvis inom 24 timmar och lämnar en tydlig, specificerad offert inom 1–2 arbetsdagar efter genomgång eller platsbesök.',
   },
   {
-    question: 'Vilka områden i Dalarna är ert huvudsakliga upptagningsområde?',
-    answer: 'Vi har vår bas i Dalarna och utför uppdrag i Falun, Borlänge, Leksand, Rättvik, Mora, Gagnef, Smedjebacken och hela regionen.',
+    question: 'Vilka områden är ert huvudsakliga upptagningsområde?',
+    answer: 'Vi har vår bas i Åhus och utför uppdrag i Kristianstad, Yngsjö, Degeberga, Bromölla, Österlen och övriga Skåne.',
   },
   {
     question: 'Kan jag boka ett kostnadsfritt platsbesök?',
-    answer: 'Självklart! Kontakta oss via formuläret eller ring 070-309 02 49 så bokar vi in en tid som passar dig.',
+    answer: 'Självklart! Kontakta oss via formuläret eller ring 076-889 97 16 så bokar vi in en tid som passar dig.',
   },
 ];
 
@@ -57,8 +57,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) 
 
 export default function Contact() {
   usePageTitle(
-    'Kontakta LiDe Måleri AB | Dalarna',
-    'Kontakta LiDe Måleri AB. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Dalarna med omnejd. Ring 070-309 02 49.'
+    'Kontakta J Måleri Åhus | Åhus & Skåne',
+    'Kontakta J Måleri Åhus. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Åhus och Skåne med omnejd. Ring 076-889 97 16.'
   );
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -147,12 +147,12 @@ export default function Contact() {
                     </p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                       <a
-                        href="tel:0703090249"
+                        href="tel:0768899716"
                         style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                         onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                         onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                       >
-                        070-309 02 49
+                        076-889 97 16
                       </a>
                     </div>
                   </div>
@@ -176,7 +176,7 @@ export default function Contact() {
                       Plats & Område
                     </p>
                     <p style={{ margin: 0, color: 'var(--color-gray-600)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                      Bas i Dalarna • Falun, Borlänge, Leksand, Mora & hela regionen
+                      Bas i Åhus • Kristianstad, Yngsjö, Degeberga & hela Skåne
                     </p>
                   </div>
                 </div>
@@ -199,13 +199,36 @@ export default function Contact() {
                       E-post
                     </p>
                     <a
-                      href="mailto:linus@lide.nu"
+                      href="mailto:Info@jmaleri.se"
                       style={{ color: 'var(--color-gray-600)', fontSize: '0.95rem', textDecoration: 'none', lineHeight: 1.5, transition: 'color 0.2s ease' }}
                       onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-primary)')}
                       onMouseLeave={e => (e.currentTarget.style.color = 'var(--color-gray-600)')}
                     >
-                      linus@lide.nu
+                      Info@jmaleri.se
                     </a>
+                  </div>
+                </div>
+
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{
+                    width: '48px',
+                    height: '48px',
+                    minWidth: '48px',
+                    background: 'rgba(194, 132, 71, 0.1)',
+                    borderRadius: '12px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <ShieldCheck size={22} color="var(--color-primary)" />
+                  </div>
+                  <div>
+                    <p style={{ margin: '0 0 4px 0', fontWeight: 700, fontSize: '0.9rem', color: 'var(--color-text-dark)' }}>
+                      Företagsinformation
+                    </p>
+                    <p style={{ margin: 0, color: 'var(--color-gray-600)', fontSize: '0.95rem', lineHeight: 1.5 }}>
+                      J Måleri Åhus • Org.nr: 559546-9049 • Godkänd för F-skatt
+                    </p>
                   </div>
                 </div>
               </div>
@@ -213,26 +236,29 @@ export default function Contact() {
 
             {/* Right: form */}
             <ScrollReveal animation="fade-left" duration={0.8} delay={100}>
-              <h2 style={{
-                color: 'var(--color-text-dark)',
-                fontWeight: 800,
-                fontSize: 'clamp(1.6rem, 2.5vw, 2rem)',
-                margin: '0 0 24px 0',
-                lineHeight: 1.2,
-              }}>
-                Skicka oss ett meddelande
-              </h2>
               <div style={{
-                background: 'var(--color-white)',
-                padding: '40px',
-                borderRadius: 'var(--border-radius-lg)',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-                border: '1px solid #f0ede8',
+                background: '#ffffff',
+                borderRadius: '24px',
+                padding: 'clamp(28px, 5vw, 44px)',
+                boxShadow: '0 4px 30px rgba(0,0,0,0.06)',
+                border: '1px solid #e2e8f0',
               }}>
-                <form onSubmit={(e) => { e.preventDefault(); alert('Tack för ditt meddelande! Vi återkopplar inom kort.'); }}>
+                <h2 style={{
+                  color: 'var(--color-text-dark)',
+                  fontWeight: 800,
+                  fontSize: 'clamp(1.6rem, 2.5vw, 2rem)',
+                  margin: '0 0 24px 0',
+                }}>
+                  Skicka ett meddelande
+                </h2>
+
+                <form onSubmit={(e) => {
+                  e.preventDefault();
+                  alert('Tack för ditt meddelande! Vi återkommer inom kort.');
+                }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="contact-form-row">
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '6px' }}>
+                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '8px' }}>
                         Namn *
                       </label>
                       <input
@@ -247,8 +273,8 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '6px' }}>
-                        Telefon *
+                      <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '8px' }}>
+                        Telefonnummer *
                       </label>
                       <input
                         type="tel"
@@ -264,8 +290,8 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '6px' }}>
-                      E-post *
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '8px' }}>
+                      E-postadress *
                     </label>
                     <input
                       type="email"
@@ -280,13 +306,13 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '6px' }}>
+                    <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '8px' }}>
                       Meddelande *
                     </label>
                     <textarea
                       required
                       rows={5}
-                      placeholder="Beskriv vad du behöver hjälp med (t.ex. invändig målning, tapetsering eller fasad)..."
+                      placeholder="Beskriv kort vad du önskar hjälp med (t.ex. målning av vardagsrum, fasadmålning villa etc.)..."
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       style={{ ...inputStyle, resize: 'vertical' }}

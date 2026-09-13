@@ -4,8 +4,8 @@ import images from '../data/images';
 import services from '../data/services';
 
 const socialIcons = [
-  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/lide.maleri' },
-  { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/LideMaleriAB?locale=sv_SE' },
+  { Icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/j.maleri' },
+  { Icon: Facebook, label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61584749818333&ref=PROFILE_EDIT_xav_ig_profile_page_web#' },
 ];
 
 export default function Footer() {
@@ -51,7 +51,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ color: 'var(--color-gray-600)', fontSize: '0.9rem', lineHeight: 1.7, margin: '0 0 20px 0' }}>
-              LiDe Måleri AB utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning med högsta kvalitet och yrkesstolthet i Dalarna med omnejd.
+              J Måleri Åhus utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning med högsta kvalitet och yrkesstolthet i Åhus och Skåne med omnejd.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {socialIcons.map(({ Icon, label, href }) => (
@@ -124,23 +124,23 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.95rem' }}>
 
               <a
-                href="mailto:linus@lide.nu"
+                href="mailto:Info@jmaleri.se"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Mail size={16} strokeWidth={2} />
                 </div>
-                <span>linus@lide.nu</span>
+                <span>Info@jmaleri.se</span>
               </a>
 
               <a
-                href="tel:0703090249"
+                href="tel:0768899716"
                 className="footer-contact-item"
               >
                 <div className="footer-contact-icon">
                   <Phone size={16} strokeWidth={2} />
                 </div>
-                <span>070-309 02 49</span>
+                <span>076-889 97 16</span>
               </a>
 
               <div
@@ -149,7 +149,7 @@ export default function Footer() {
                 <div className="footer-contact-icon">
                   <MapPin size={16} strokeWidth={2} />
                 </div>
-                <span>Dalarna • Falun • Borlänge • Leksand</span>
+                <span>Åhus • Kristianstad • Skåne</span>
               </div>
             </div>
           </div>
@@ -170,8 +170,10 @@ export default function Footer() {
             gap: '8px',
           }}
         >
-          <div style={{ display: 'flex', gap: '12px', alignItems: 'center', color: 'var(--color-gray-600)', fontSize: '0.875rem', flexWrap: 'wrap' }}>
-            <span>© 2026 - LiDe Måleri AB</span>
+          <div style={{ display: 'flex', gap: '16px', alignItems: 'center', color: 'var(--color-gray-600)', fontSize: '0.875rem', flexWrap: 'wrap' }}>
+            <span>© 2026 - J Måleri Åhus</span>
+            <span>Org.nr: 559546-9049</span>
+            <span>Godkänd för F-skatt</span>
           </div>
         </div>
       </div>

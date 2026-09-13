@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+const LOGO_ABSOLUTE_URL = 'https://media.fastdl.app/get?__sig=yZ5cy3oL9B-W22OrOvHRGA&__expires=1789300022&uri=https%3A%2F%2Fscontent.cdninstagram.com%2Fv%2Ft51.82787-19%2F588618765_17854509519579359_8698885052892276767_n.jpg%3F_nc_cat%3D105%26ccb%3D7-5%26_nc_sid%3Dbf7eb4%26efg%3DeyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy45NTguQzMifQ%253D%253D%26_nc_ohc%3Dc8574OWW004Q7kNvwH2fAxD%26_nc_oc%3DAdrEfKYIwxMKyMQVO-OSRXiho18alnC2xOSlXVs1fLvD5Hhfz3xpDlAuoGK4WauYPSQ%26_nc_zt%3D24%26_nc_ht%3Dscontent.cdninstagram.com%26_nc_gid%3DUJcRhg3colxYc8r3Mc-Cxw%26_nc_ss%3D7a2a8%26oh%3D00_AQIzPYryTk8d-St147_O2djExJ4bblv7bI4lq9wqQQyzfA%26oe%3D6AAC3F0D&filename=588618765_17854509519579359_8698885052892276767_n.jpg';
+
 export function usePageTitle(title: string, description?: string) {
   const { pathname } = useLocation();
 
@@ -9,7 +11,7 @@ export function usePageTitle(title: string, description?: string) {
     document.title = title;
 
     // 2. Update Description
-    const defaultDesc = "LiDe Måleri AB utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Dalarna med omnejd. Kontakta oss för fri offert!";
+    const defaultDesc = "J Måleri Åhus utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Åhus och Skåne med omnejd för privatpersoner och företag. Kontakta oss för fri offert!";
     const activeDesc = description || defaultDesc;
     
     let metaDescription = document.querySelector('meta[name="description"]');
@@ -39,9 +41,8 @@ export function usePageTitle(title: string, description?: string) {
     // 5. Update Canonical Link & Absolute URL
     const origin = typeof window !== 'undefined' && window.location.origin.startsWith('http')
       ? window.location.origin
-      : 'https://lidemaleri.se';
+      : 'https://jmaleri.se';
     const absoluteUrl = `${origin}${pathname === '/' ? '' : pathname}`;
-    const ogImageUrl = `${origin}/logo.png`;
 
     let canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
@@ -59,16 +60,16 @@ export function usePageTitle(title: string, description?: string) {
 
     let ogImage = document.querySelector('meta[property="og:image"]');
     if (ogImage) {
-      ogImage.setAttribute('content', ogImageUrl);
+      ogImage.setAttribute('content', LOGO_ABSOLUTE_URL);
     } else {
       ogImage = document.createElement('meta');
       ogImage.setAttribute('property', 'og:image');
-      ogImage.setAttribute('content', ogImageUrl);
+      ogImage.setAttribute('content', LOGO_ABSOLUTE_URL);
       document.head.appendChild(ogImage);
     }
     let twitterImage = document.querySelector('meta[name="twitter:image"]');
     if (twitterImage) {
-      twitterImage.setAttribute('content', ogImageUrl);
+      twitterImage.setAttribute('content', LOGO_ABSOLUTE_URL);
     }
 
   }, [title, description, pathname]);

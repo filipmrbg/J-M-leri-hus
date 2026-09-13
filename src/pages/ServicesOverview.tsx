@@ -14,22 +14,34 @@ const container: React.CSSProperties = {
 
 export default function ServicesOverview() {
   usePageTitle(
-    'Våra Tjänster | LiDe Måleri AB Dalarna',
-    'Utforska våra måleritjänster: Invändigt måleri, utvändigt måleri & fasad, tapetsering och helhetsentreprenad i Dalarna med omnejd.'
+    'Våra Tjänster | J Måleri Åhus',
+    'Utforska våra måleritjänster: Invändigt måleri, utvändigt måleri & fasad, tapetsering och helhetsentreprenad i Åhus och Skåne med omnejd.'
   );
 
   const { hash } = useLocation();
 
   useEffect(() => {
     if (hash) {
-      let id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        setTimeout(() => {
+      const id = hash.replace('#', '');
+      const attempt = () => {
+        const element = document.getElementById(id);
+        if (element) {
           const yOffset = -100;
           const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }, 100);
+          window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+          return true;
+        }
+        return false;
+      };
+      if (!attempt()) {
+        const t1 = setTimeout(attempt, 80);
+        const t2 = setTimeout(attempt, 250);
+        const t3 = setTimeout(attempt, 600);
+        return () => {
+          clearTimeout(t1);
+          clearTimeout(t2);
+          clearTimeout(t3);
+        };
       }
     } else {
       window.scrollTo({ top: 0, behavior: 'instant' });
@@ -82,7 +94,7 @@ export default function ServicesOverview() {
               margin: '0 auto',
               lineHeight: 1.65,
             }}>
-              LiDe Måleri AB erbjuder professionella måleritjänster, tapetsering och fasadunderhåll i Dalarna med omnejd.
+              J Måleri Åhus erbjuder professionella måleritjänster, tapetsering och fasadunderhåll i Åhus och Skåne med omnejd.
             </p>
           </ScrollReveal>
         </div>

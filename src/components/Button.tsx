@@ -1,7 +1,7 @@
 import { ReactNode, MouseEventHandler, CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 
-type Variant = 'primary' | 'outline' | 'dark';
+type Variant = 'primary' | 'outline' | 'dark' | 'secondary';
 type Size = 'sm' | 'md' | 'lg';
 
 interface Props {
@@ -35,6 +35,12 @@ const variantStyles: Record<Variant, CSSProperties> = {
     color: 'var(--color-white)',
     border: '2px solid transparent',
   },
+  secondary: {
+    background: '#ffffff',
+    color: 'var(--color-text-dark, #0f172a)',
+    border: '1.5px solid #cbd5e1',
+    fontWeight: 600,
+  },
 };
 
 const base: CSSProperties = {
@@ -57,6 +63,11 @@ function handleMouseEnter(e: React.MouseEvent<HTMLElement>, variant: Variant) {
   if (variant === 'primary') {
     el.style.background = 'var(--color-primary-hover)';
     el.style.boxShadow = '0 8px 25px rgba(194, 132, 71, 0.45)';
+  } else if (variant === 'secondary') {
+    el.style.background = '#f8fafc';
+    el.style.borderColor = 'var(--color-primary)';
+    el.style.color = 'var(--color-primary)';
+    el.style.boxShadow = '0 8px 25px rgba(15, 23, 42, 0.08)';
   } else {
     el.style.boxShadow = '0 8px 25px rgba(194, 132, 71, 0.2)';
   }
@@ -68,6 +79,10 @@ function handleMouseLeave(e: React.MouseEvent<HTMLElement>, variant: Variant) {
   el.style.boxShadow = 'none';
   if (variant === 'primary') {
     el.style.background = 'var(--color-primary)';
+  } else if (variant === 'secondary') {
+    el.style.background = '#ffffff';
+    el.style.borderColor = '#cbd5e1';
+    el.style.color = 'var(--color-text-dark, #0f172a)';
   }
 }
 

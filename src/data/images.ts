@@ -39,28 +39,28 @@ export interface SiteImages {
 const images: SiteImages = {
   logo: {
     url: '/logo.png',
-    alt: 'LiDe Måleri AB',
+    alt: 'J Måleri Åhus',
   },
   logoDark: {
     url: '/logo-dark.png',
-    alt: 'LiDe Måleri AB',
+    alt: 'J Måleri Åhus',
   },
 
   hero: {
     background: {
       url: '/hero-main.webp',
-      alt: 'LiDe Måleri AB måleriarbeten i Dalarna med omnejd',
+      alt: 'J Måleri Åhus måleriarbeten i Åhus och Skåne med omnejd',
     },
   },
 
   services: {
     'invandigt-maleri': {
       url: '/gallery/gallery-2.jpg',
-      alt: 'Invändigt måleri och tapetsering i Dalarna',
+      alt: 'Invändigt måleri och tapetsering i Åhus',
     },
     'fasadmalning': {
       url: '/gallery/gallery-1.jpg',
-      alt: 'Utvändigt måleri och fasadrenovering i Dalarna',
+      alt: 'Utvändigt måleri och fasadrenovering i Åhus',
     },
     'tapetsering': {
       url: '/gallery/gallery-4.jpg',
@@ -75,49 +75,49 @@ const images: SiteImages = {
   gallery: [
     {
       url: '/gallery/gallery-1.jpg',
-      alt: 'LiDe Måleri AB fasadmålning och utvändigt måleriarbete',
+      alt: 'J Måleri Åhus fasadmålning och utvändigt måleriarbete',
     },
     {
       url: '/gallery/gallery-2.jpg',
-      alt: 'LiDe Måleri AB invändig målning och väggfinish',
+      alt: 'J Måleri Åhus invändig målning och väggfinish',
     },
     {
       url: '/gallery/gallery-3.jpg',
-      alt: 'LiDe Måleri AB tak och snickerimålning',
+      alt: 'J Måleri Åhus tak och snickerimålning',
     },
     {
       url: '/gallery/gallery-4.jpg',
-      alt: 'LiDe Måleri AB mönstertapetsering och fondvägg',
+      alt: 'J Måleri Åhus mönstertapetsering och fondvägg',
     },
     {
       url: '/gallery/gallery-5.jpg',
-      alt: 'LiDe Måleri AB detaljarbete och snickerifinish',
+      alt: 'J Måleri Åhus detaljarbete och snickerifinish',
     },
     {
       url: '/gallery/gallery-6.jpg',
-      alt: 'LiDe Måleri AB färdigställt måleriprojekt',
+      alt: 'J Måleri Åhus färdigställt måleriprojekt',
     },
   ],
 
   cta: {
     banner: {
       url: '/hero-main.webp',
-      alt: 'LiDe Måleri AB måleriprojekt',
+      alt: 'J Måleri Åhus måleriprojekt',
     },
     midSection: {
       url: '/hero-main.webp',
-      alt: 'LiDe Måleri arbetsplats Dalarna',
+      alt: 'J Måleri arbetsplats Åhus',
     },
   },
 
   about: {
     hero: {
       url: '/about-us.jpg',
-      alt: 'LiDe Måleri AB verksamhet och måleriarbete i Dalarna',
+      alt: 'J Måleri Åhus verksamhet och måleriarbete i Åhus',
     },
     teamMember: {
       url: '/logo.png',
-      alt: 'Teammedlem LiDe Måleri AB',
+      alt: 'Teammedlem J Måleri Åhus',
     },
   },
 
@@ -135,10 +135,10 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-1.jpg',
-        alt: 'Fasadmålning villa i Dalarna',
+        alt: 'Fasadmålning villa i Åhus',
       },
       title: 'Fasadmålning & Träskydd Villa',
-      category: 'Fasad',
+      category: 'Fasadmålning',
     },
     {
       image: {
@@ -151,7 +151,7 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-3.jpg',
-        alt: 'Tak- och väggmålning Dalarna',
+        alt: 'Tak- och väggmålning Åhus',
       },
       title: 'Tak, Väggar & Snickerier',
       category: 'Måleri',
@@ -159,10 +159,10 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-4.jpg',
-        alt: 'Mönstertapetsering och spackling',
+        alt: 'Ytfinish och väggmålning',
       },
-      title: 'Mönsterpassad Tapetsering',
-      category: 'Tapetsering',
+      title: 'Spackling & Ytfinish',
+      category: 'Inomhusmåleri',
     },
     {
       image: {
@@ -175,10 +175,10 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-6.jpg',
-        alt: 'Helhetsentreprenad måleri Dalarna',
+        alt: 'Helhetsentreprenad måleri Skåne',
       },
-      title: 'Totalentreprenad Måleri',
-      category: 'Helhetsprojekt',
+      title: 'Totalrenovering Måleri',
+      category: 'Helhetsmåleri',
     },
   ],
 };

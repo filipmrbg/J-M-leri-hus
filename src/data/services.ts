@@ -37,8 +37,8 @@ export const services: ServiceItem[] = [
     slug: 'invandigt-maleri',
     title: 'Invändigt Måleri',
     shortDescription: 'Noggrann målning av väggar, tak, lister och dörrar samt underarbete med spackling och slipning för en perfekt och slät yta.',
-    heroText: 'Skapa trivsel och nytt liv i hemmet med professionellt inomhusmåleri i Dalarna med omnejd.',
-    detailedDescription: `Vill du förnya vardagsrummet, sovrummet eller hela bostaden med nya kulörer? LiDe Måleri AB utför alla typer av invändiga måleriarbeten med stor noggrannhet och yrkesstolthet.
+    heroText: 'Skapa trivsel och nytt liv i hemmet med professionellt inomhusmåleri i Åhus med omnejd.',
+    detailedDescription: `Vill du förnya vardagsrummet, sovrummet eller hela bostaden med nya kulörer? J Måleri Åhus utför alla typer av invändiga måleriarbeten med stor noggrannhet och yrkesstolthet för både privatpersoner och företag.
 
 Vi lägger största vikt vid ett gediget underarbete – spackling, slipning och grundmålning – vilket är hemligheten bakom en jämn och hållbar slutfinish. Som privatperson nyttjar du 30 % ROT-avdrag direkt på fakturan.`,
     heroImage: '/gallery/gallery-2.jpg',
@@ -65,10 +65,10 @@ Vi lägger största vikt vid ett gediget underarbete – spackling, slipning och
   },
   {
     slug: 'fasadmalning',
-    title: 'Utvändigt Måleri & Fasad',
-    shortDescription: 'Hållbar fasadmålning, fönstermålning och trävård som skyddar din fastighet mot det nordiska klimatet i många år framöver.',
-    heroText: 'Ge huset ett långvarigt skydd och ett vackert lyft med professionell fasadmålning i Dalarna.',
-    detailedDescription: `En väl underhållen fasad skyddar fastigheten mot fukt, röta och väderpåverkan. LiDe Måleri AB utför kompletta utvändiga måleriarbeten på villor, fritidshus, garage och kommersiella fastigheter i Dalarna.
+    title: 'Fasadmålning',
+    shortDescription: 'Hållbar fasadmålning, fönstermålning och trävård som skyddar din fastighet mot väder och vind i många år framöver.',
+    heroText: 'Ge huset ett långvarigt skydd och ett vackert lyft med professionell fasadmålning i Åhus.',
+    detailedDescription: `En väl underhållen fasad skyddar fastigheten mot fukt, röta och väderpåverkan. J Måleri Åhus utför kompletta utvändiga måleriarbeten på villor, fritidshus, garage och kommersiella fastigheter i Åhus och nordöstra Skåne.
 
 Vi börjar alltid med noggrann fasadtvätt, skrapning av lös färg och grundoljning innan fasaden färdigstryks med premiumfärg anpassad för vårt klimat.`,
     heroImage: '/gallery/gallery-1.jpg',
@@ -95,10 +95,10 @@ Vi börjar alltid med noggrann fasadtvätt, skrapning av lös färg och grundolj
   },
   {
     slug: 'tapetsering',
-    title: 'Tapetsering & Spackling',
+    title: 'Tapetsering och spackling',
     shortDescription: 'Skickligt hantverk med perfekt mönsterpassning, skarvfria väggar och armeringsduk för både klassiska och moderna designtapeter.',
-    heroText: 'Sätt personlig prägel på dina rum med exakt tapetsering och högklassig ytfinish i Dalarna.',
-    detailedDescription: `Att tapetsera kräver noggrannhet och rätt teknik för att skarvar och mönster ska stämma perfekt. LiDe Måleri AB har lång erfarenhet av att sätta upp allt från mönstrade designtapeter och fototapeter till armeringsduk och renoveringstapeter.
+    heroText: 'Sätt personlig prägel på dina rum med exakt tapetsering och högklassig ytfinish i Åhus.',
+    detailedDescription: `Att tapetsera kräver noggrannhet och rätt teknik för att skarvar och mönster ska stämma perfekt. J Måleri Åhus har lång erfarenhet av att sätta upp allt från mönstrade designtapeter och fototapeter till armeringsduk och renoveringstapeter.
 
 Vi säkerställer att underlaget är fullständigt slätt innan tapetsering så att slutresultatet blir helt felfritt.`,
     heroImage: '/gallery/gallery-4.jpg',
@@ -121,10 +121,10 @@ Vi säkerställer att underlaget är fullständigt slätt innan tapetsering så 
   },
   {
     slug: 'totalentreprenad',
-    title: 'Totalentreprenad Måleri',
+    title: 'Totalentreprenad',
     shortDescription: 'Ett samlat helhetsansvar för större måleriprojekt vid nybyggnationer, renoveringar och uppdrag för bostadsrättsföreningar.',
-    heroText: 'Bekymmersfritt måleri – en enda kontaktperson för alla dina måleribehov i Dalarna.',
-    detailedDescription: `Vid större ombyggnader, nyproduktion eller renovering av flerbostadshus tar LiDe Måleri AB det fulla ansvaret för målerientreprenaden.
+    heroText: 'Bekymmersfritt måleri – en enda kontaktperson för alla dina måleribehov i Åhus och Skåne.',
+    detailedDescription: `Vid större ombyggnader, nyproduktion eller renovering av flerbostadshus tar J Måleri Åhus det fulla ansvaret för målerientreprenaden.
 
 Du får en dedikerad personlig kontaktperson genom hela projektet. Vi säkerställer tydliga tidsplaner, fasta priser och löpande avstämningar så att du kan känna dig helt trygg.`,
     heroImage: '/gallery/gallery-6.jpg',
@@ -133,7 +133,7 @@ Du får en dedikerad personlig kontaktperson genom hela projektet. Vi säkerstä
     tag: 'Totalentreprenad',
     badge: '100% Trygghet',
     highlights: [
-      'En dedikerad kontaktperson & projektledare',
+      'En dedikerad kontaktperson och projektledare',
       'Måleri vid nybyggnation och tillbyggnad',
       'Större projekt för BRF och fastighetsägare',
       'Tydlig tidsplan och fast offert',
@@ -145,7 +145,7 @@ Du får en dedikerad personlig kontaktperson genom hela projektet. Vi säkerstä
       },
       {
         question: 'Utför ni måleriarbeten åt företag och bostadsrättsföreningar?',
-        answer: 'Ja, vi utför regelbundet uppdrag för företag, BRF:er och fastighetsägare i Falun, Borlänge och övriga Dalarna.',
+        answer: 'Ja, vi utför regelbundet uppdrag för företag, BRF:er och fastighetsägare i Åhus, Kristianstad och övriga Skåne.',
       },
     ],
   },

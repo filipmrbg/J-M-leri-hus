@@ -50,15 +50,30 @@ const homeFaqItems = [
   },
 ];
 
+const heroSlides = [
+  { url: '/hero-slides/slide-1.jpg', alt: 'J Måleri Åhus professionellt måleri' },
+  { url: '/hero-slides/slide-2.jpg', alt: 'Invändigt måleri och tapetsering' },
+  { url: '/hero-slides/slide-3.jpg', alt: 'Högklassigt måleriarbete med perfekt finish' },
+  { url: '/hero-slides/slide-4.jpg', alt: 'Fasadmålning och träskydd i Åhus' },
+];
+
 export default function Home() {
   usePageTitle(
-    'LiDe Måleri AB | Måleriarbeten i Dalarna med omnejd',
-    'LiDe Måleri AB utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Dalarna med omnejd. Kontakta oss för fri offert!'
+    'J Måleri Åhus | Måleri och tapetsering i Åhus med omnejd',
+    'J Måleri Åhus utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Åhus och Skåne med omnejd för privatpersoner och företag. Kontakta oss för fri offert!'
   );
 
   const heroBgRef = useRef<HTMLDivElement>(null);
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isCallModalOpen, setIsCallModalOpen] = useState(false);
+
+  // Auto-advance slideshow every 5s
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     let ticking = false;
@@ -77,47 +92,7 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    const video = heroVideoRef.current;
-    if (!video) return;
-
-    const attemptPlay = () => {
-      if (!video) return;
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-      const promise = video.play();
-      if (promise !== undefined) {
-        promise.catch(() => {
-          // Autoplay blocked
-        });
-      }
-    };
-
-    attemptPlay();
-
-    const events = ['loadedmetadata', 'loadeddata', 'canplay', 'canplaythrough', 'playing'];
-    events.forEach((event) => video.addEventListener(event, attemptPlay));
-
-    const unlockPlay = () => {
-      if (video && video.paused) {
-        attemptPlay();
-      }
-    };
-
-    window.addEventListener('touchstart', unlockPlay, { passive: true });
-    window.addEventListener('touchend', unlockPlay, { passive: true });
-    window.addEventListener('scroll', unlockPlay, { passive: true });
-    window.addEventListener('click', unlockPlay, { passive: true });
-
-    return () => {
-      events.forEach((event) => video.removeEventListener(event, attemptPlay));
-      window.removeEventListener('touchstart', unlockPlay);
-      window.removeEventListener('touchend', unlockPlay);
-      window.removeEventListener('scroll', unlockPlay);
-      window.removeEventListener('click', unlockPlay);
-    };
-  }, []);
+  
 
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -133,40 +108,52 @@ export default function Home() {
         paddingBottom: '80px',
         boxSizing: 'border-box',
       }}>
-        {/* Parallax Background Video */}
+        {/* Hero Background Slideshow (Nelhages-inspired) */}
         <div
           ref={heroBgRef}
           style={{
             position: 'absolute',
-            inset: '-20% 0',
+            inset: 0,
             zIndex: 0,
-            willChange: 'transform',
+            overflow: 'hidden',
           }}
         >
-          <video
-            ref={heroVideoRef}
-            src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260828_104600_2d4a8a55-20f8-4f3b-a59f-2e5b31428726.mp4"
-            preload="auto"
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              filter: 'brightness(1.06) contrast(1.03)',
-            }}
-          >
-            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_3G5LlmMYORSdAk8SxzXrK2S0Is5/hf_20260828_104600_2d4a8a55-20f8-4f3b-a59f-2e5b31428726.mp4" type="video/mp4" />
-          </video>
+          {heroSlides.map((slide, index) => {
+            const isActive = index === currentSlide;
+            return (
+              <div
+                key={slide.url}
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  opacity: isActive ? 1 : 0,
+                  transition: 'opacity 1.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  pointerEvents: 'none',
+                }}
+              >
+                <img
+                  src={slide.url}
+                  alt={slide.alt}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
+                    transform: isActive ? 'scale(1.04)' : 'scale(1.0)',
+                    transition: 'transform 6s ease-out',
+                    filter: 'brightness(0.92) contrast(1.04)',
+                  }}
+                />
+              </div>
+            );
+          })}
         </div>
-        {/* Lighter, softer overlay letting the video shine through */}
+
+        {/* Sophisticated gradient overlay for readability & punch */}
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, rgba(15, 23, 42, 0.52) 0%, rgba(15, 23, 42, 0.32) 55%, rgba(15, 23, 42, 0.12) 100%)',
+          background: 'linear-gradient(90deg, rgba(15, 23, 42, 0.76) 0%, rgba(15, 23, 42, 0.48) 55%, rgba(15, 23, 42, 0.22) 100%)',
           zIndex: 1,
         }} />
 
@@ -193,25 +180,23 @@ export default function Home() {
                 display: 'block',
                 marginBottom: '14px',
               }}>
-                DALARNA MED OMNEJD
+                ÅHUS • KRISTIANSTAD • SKÅNE
               </span>
             </ScrollReveal>
 
-            {/* Logo-Matched Brush Headline (H1) */}
+            {/* Clean & Modern Sans-Serif Headline (H1) */}
             <ScrollReveal animation="fade-up" delay={100} duration={0.8}>
               <h1 style={{
-                fontFamily: "'Permanent Marker', 'Sedgwick Ave', 'Caveat Brush', cursive, sans-serif",
+                fontFamily: "'Outfit', sans-serif",
                 color: '#ffffff',
-                fontSize: 'clamp(2.4rem, 5.5vw, 4.4rem)',
-                lineHeight: 1.12,
-                letterSpacing: '0.03em',
-                margin: '0 0 24px 0',
-                textShadow: '0 4px 18px rgba(0, 0, 0, 0.85), 0 2px 6px rgba(0, 0, 0, 0.9)',
-                fontWeight: 400,
-                transform: 'rotate(-1deg)',
-                transformOrigin: 'left center',
+                fontSize: 'clamp(2.8rem, 5.6vw, 4.4rem)',
+                fontWeight: 700,
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                margin: '0 0 20px 0',
+                textShadow: '0 3px 20px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9)',
               }}>
-                LiDe Måleri AB
+                J Måleri Åhus
               </h1>
             </ScrollReveal>
 
@@ -227,7 +212,7 @@ export default function Home() {
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Professionella måleriarbeten och tapetsering i Dalarna med omnejd. Från noggrant underarbete och invändig målning till hållbar fasadmålning med högsta precision och yrkesstolthet.
+                Professionella måleriarbeten och tapetsering i Åhus med omnejd för privatpersoner och företag. Från noggrant underarbete och invändig målning till hållbar fasadmålning med högsta precision och yrkesstolthet.
               </p>
             </ScrollReveal>
 
@@ -246,7 +231,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                   size="lg"
-                  href="tel:0703090249"
+                  href="tel:0768899716"
                   onClick={(e) => {
                     if (window.innerWidth > 768) {
                       e.preventDefault();
@@ -256,7 +241,7 @@ export default function Home() {
                 >
                   <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                     <Phone size={18} />
-                    Ring 070-309 02 49
+                    Ring 076-889 97 16
                   </span>
                 </Button>
               </div>
@@ -271,7 +256,7 @@ export default function Home() {
         onClose={() => setIsCallModalOpen(false)}
       />
 
-      {/* ── SECTION 2: VÅRA TJÄNSTER (MODERN CLEAN PHOTO CARDS) ───── */}
+      {/* ── SECTION 2: VÅRA TJÄNSTER (CLEAN 4 CARDS ON A ROW - NO PHOTOS) ───── */}
       <section
         id="tjanster"
         style={{
@@ -281,7 +266,7 @@ export default function Home() {
         }}
       >
         <div style={container}>
-          {/* Clean Authentic Split-Header */}
+          {/* Authentic Split-Header */}
           <div style={{
             display: 'flex',
             justifyContent: 'space-between',
@@ -324,7 +309,7 @@ export default function Home() {
                   lineHeight: 1.65,
                   margin: '0 0 12px 0',
                 }}>
-                  Från invändig målning och tapetsering till fasadmålning och totalentreprenad i Falun, Borlänge och hela Dalarna.
+                  Från invändig målning och tapetsering till fasadmålning och totalentreprenad i Åhus, Kristianstad och hela nordöstra Skåne.
                 </p>
                 <Link
                   to="/tjanster"
@@ -344,133 +329,42 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Clean Modern Photo Grid - 4 Services with Icons */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '24px',
-          }}>
+          {/* Clean Architectural Icon-Centric Grid (4 cards on a row) */}
+          <div className="services-showcase-grid">
             {services.map((svc: ServiceItem, index: number) => (
               <ScrollReveal key={svc.slug} animation="fade-up" delay={index * 80}>
                 <Link
                   to={svc.href}
-                  className="modern-photo-card"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    background: '#ffffff',
-                    borderRadius: '16px',
-                    overflow: 'hidden',
-                    textDecoration: 'none',
-                    border: '1px solid #e2e8f0',
-                    boxShadow: '0 4px 20px rgba(15, 23, 42, 0.05)',
-                    transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-                    height: '100%',
-                  }}
-                  onMouseEnter={(e) => {
-                    const card = e.currentTarget;
-                    card.style.transform = 'translateY(-6px)';
-                    card.style.boxShadow = '0 20px 40px rgba(15, 23, 42, 0.12)';
-                    card.style.borderColor = 'rgba(194, 132, 71, 0.3)';
-                    const img = card.querySelector('.card-photo') as HTMLElement;
-                    if (img) img.style.transform = 'scale(1.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const card = e.currentTarget;
-                    card.style.transform = 'translateY(0)';
-                    card.style.boxShadow = '0 4px 20px rgba(15, 23, 42, 0.05)';
-                    card.style.borderColor = '#e2e8f0';
-                    const img = card.querySelector('.card-photo') as HTMLElement;
-                    if (img) img.style.transform = 'scale(1)';
-                  }}
+                  className="service-feature-card"
+                  aria-label={`Läs mer om ${svc.title}`}
                 >
-                  {/* Photo Container */}
-                  <div style={{
-                    position: 'relative',
-                    width: '100%',
-                    height: '190px',
-                    overflow: 'hidden',
-                    background: '#0f172a',
-                  }}>
-                    <img
-                      src={svc.image}
-                      alt={svc.title}
-                      loading="lazy"
-                      className="card-photo"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        display: 'block',
-                        transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-                      }}
+                  {/* Bespoke Craft Line Icon */}
+                  <div className="service-feature-icon">
+                    <ServiceIcon
+                      type={svc.slug}
+                      color="var(--color-primary, #c28447)"
+                      size={42}
                     />
-                    <div style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: 'linear-gradient(180deg, transparent 40%, rgba(15, 23, 42, 0.6) 100%)',
-                      pointerEvents: 'none',
-                    }} />
                   </div>
 
-                  {/* Content Container */}
-                  <div style={{
-                    padding: '24px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    flex: 1,
-                  }}>
-                    {/* Architectural Service Icon */}
-                    <div style={{ marginBottom: '16px' }}>
-                      <ServiceIcon type={svc.slug} color="var(--color-primary)" size={38} />
-                    </div>
+                  {/* Title */}
+                  <h3 className="service-feature-title">
+                    {svc.title}
+                  </h3>
 
-                    <h3 style={{
-                      color: 'var(--color-text-dark)',
-                      fontWeight: 800,
-                      fontSize: '1.25rem',
-                      margin: '0 0 10px 0',
-                      letterSpacing: '-0.015em',
-                      lineHeight: 1.25,
-                    }}>
-                      {svc.title}
-                    </h3>
-                    <p style={{
-                      color: 'var(--color-gray-600)',
-                      fontSize: '0.92rem',
-                      lineHeight: 1.6,
-                      margin: '0 0 20px 0',
-                      flex: 1,
-                    }}>
-                      {svc.shortDescription}
-                    </p>
+                  {/* Description */}
+                  <p className="service-feature-desc">
+                    {svc.shortDescription}
+                  </p>
 
-                    <div style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      color: 'var(--color-primary)',
-                      fontWeight: 700,
-                      fontSize: '0.9rem',
-                      marginTop: 'auto',
-                      paddingTop: '14px',
-                      borderTop: '1px solid #f1f5f9',
-                    }}>
-                      Läs mer <ArrowRight size={15} />
-                    </div>
+                  {/* Clean Link Indicator */}
+                  <div className="service-feature-link">
+                    <span>Läs mer om tjänsten</span>
+                    <ArrowRight size={16} />
                   </div>
                 </Link>
               </ScrollReveal>
             ))}
-          </div>
-
-          {/* Centered Button Underneath Grid */}
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <ScrollReveal animation="fade-up" delay={200}>
-              <Button variant="primary" href="/tjanster" size="lg">
-                Utforska alla tjänster <ArrowRight size={18} />
-              </Button>
-            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -504,7 +398,7 @@ export default function Home() {
               }}>
                 <img
                   src={images.about.hero.url}
-                  alt="LiDe Måleri AB"
+                  alt="J Måleri Åhus"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -526,7 +420,7 @@ export default function Home() {
                   lineHeight: 1.2,
                   margin: '0 0 14px 0',
                 }}>
-                  Din lokala målerifirma i Dalarna med omnejd
+                  Din lokala målerifirma i Åhus med omnejd
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="scale-x-left" delay={200} duration={0.6}>
@@ -539,16 +433,16 @@ export default function Home() {
                   lineHeight: 1.75,
                   margin: '0 0 32px 0',
                 }}>
-                  LiDe Måleri AB har sin bas i Dalarna och utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering. Vi kombinerar gediget hantverkskunnande med moderna kvalitetsfärger och noggrannhet i varje penseldrag – så att du får ett perfekt och hållbart resultat från start till mål.
+                  J Måleri Åhus har sin bas i Åhus och utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering för både privatpersoner och företag. Vi kombinerar gediget hantverkskunnande med moderna kvalitetsfärger och noggrannhet i varje penseldrag – så att du får ett perfekt och hållbart resultat från start till mål.
                 </p>
               </ScrollReveal>
               <ScrollReveal animation="fade-right" duration={0.8} delay={200}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {[
                     'En och samma kontaktperson genom hela projektet',
-                    'Tydliga offerter, fasta priser och direkt ROT-avdrag (30%)',
+                    'Tydliga offerter, fasta priser och direkt ROT avdrag (30%)',
                     'Noggrant underarbete och kvalitetsfärg för maximal livslängd',
-                    'Lokal närvaro och personlig service i hela Dalarna',
+                    'Lokal närvaro och personlig service i Åhus och nordöstra Skåne',
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <CheckCircle2 size={24} color="var(--color-primary)" style={{ flexShrink: 0 }} />
@@ -601,7 +495,7 @@ export default function Home() {
                   display: 'block',
                   marginBottom: '8px',
                 }}>
-                  Enkelt & tryggt
+                  Enkelt och tryggt
                 </span>
                 <h2 style={{
                   color: 'var(--color-text-dark)',
@@ -645,7 +539,7 @@ export default function Home() {
               },
               {
                 icon: MapPin,
-                title: '2. Platsbesök & offert',
+                title: '2. Platsbesök och offert',
                 desc: 'Vi går igenom underlag och ytor på plats och tar fram en tydlig offert med fast pris och tidsplan.',
               },
               {
@@ -808,7 +702,7 @@ export default function Home() {
                       <Star key={i} size={15} fill="#FBBC05" color="#FBBC05" />
                     ))}
                   </div>
-                  <span style={{ color: 'var(--color-gray-600)', fontSize: '0.85rem' }}>(Omdömen i Dalarna)</span>
+                  <span style={{ color: 'var(--color-gray-600)', fontSize: '0.85rem' }}>(Omdömen i Åhus och Kristianstad)</span>
                 </div>
               </ScrollReveal>
             </div>
@@ -818,8 +712,8 @@ export default function Home() {
             {[
               {
                 name: 'Johan E.',
-                location: 'Falun',
-                text: 'Vi anlitade LiDe Måleri AB för ommålning av hela nedervåningen inklusive spackling och tapetsering i vardagsrummet. Otroligt proffsigt bemötande, raka besked och fantastiskt resultat med knivskarpa linjer. Rekommenderas varmt!',
+                location: 'Åhus',
+                text: 'Vi anlitade J Måleri Åhus för ommålning av hela nedervåningen inklusive spackling och målning i vardagsrummet. Otroligt proffsigt bemötande av Joakim, raka besked och fantastiskt resultat med knivskarpa linjer. Rekommenderas varmt!',
                 stars: 5,
                 date: 'för 2 veckor sedan',
                 authorSub: 'Lokal guide • 14 omdömen',
@@ -827,8 +721,8 @@ export default function Home() {
               },
               {
                 name: 'Karin M.',
-                location: 'Borlänge',
-                text: 'LiDe Måleri AB hjälpte oss med utvändig fasadmålning av villan och garaget. Från grundlig tvätt och skrapning till två strykningar flöt allt på helt enligt tidsplanen. Mycket noggranna målare som lämnade tomten skinande ren.',
+                location: 'Kristianstad',
+                text: 'J Måleri Åhus hjälpte oss med utvändig fasadmålning av villan och garaget. Från grundlig tvätt och skrapning till två strykningar flöt allt på helt enligt tidsplanen. Mycket noggranna hantverkare som lämnade tomten skinande ren.',
                 stars: 5,
                 date: 'för en månad sedan',
                 authorSub: '8 omdömen',
@@ -836,8 +730,8 @@ export default function Home() {
               },
               {
                 name: 'Markus L.',
-                location: 'Leksand',
-                text: 'Toppklassigt måleriarbete vid vår totalrenovering. LiDe Måleri AB levererade perfekt finish på både väggar, tak och snickerier. Tryggt, prisvärt och med full koll på ROT-avdraget!',
+                location: 'Yngsjö',
+                text: 'Toppklassigt måleriarbete vid vår renovering. J Måleri Åhus levererade perfekt finish på både väggar, tak och snickerier. Tryggt, prisvärt och med full koll på ROT avdraget!',
                 stars: 5,
                 date: 'för 2 månader sedan',
                 authorSub: 'Lokal guide • 19 omdömen',

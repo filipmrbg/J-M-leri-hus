@@ -10,10 +10,10 @@ export default function CallModal({ isOpen, onClose }: CallModalProps) {
 
   const contacts = [
     {
-      name: 'LiDe Måleri AB',
-      role: 'Måleri & Rådgivning',
-      phone: '070-309 02 49',
-      tel: 'tel:0703090249',
+      name: 'Joakim',
+      role: 'Målarmästare & Ägare',
+      phone: '076-889 97 16',
+      tel: 'tel:0768899716',
     },
   ];
 
@@ -103,7 +103,7 @@ export default function CallModal({ isOpen, onClose }: CallModalProps) {
               fontFamily: 'var(--font-family)',
             }}
           >
-            Ring LiDe Måleri AB
+            Ring J Måleri Åhus
           </h2>
           <p style={{ fontSize: '0.9rem', color: '#64748b', margin: 0, lineHeight: 1.5 }}>
             Kontakta oss direkt för rådgivning, frågor och kostnadsfri offert.

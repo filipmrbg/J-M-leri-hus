@@ -53,8 +53,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | 
 
 export default function Quote() {
   usePageTitle(
-    'Begär offert | LiDe Måleri AB',
-    'Beskriv ditt projekt och begär en kostnadsfri offert för invändigt måleri, fasadmålning, tapetsering eller totalentreprenad i Dalarna med omnejd.'
+    'Begär offert | J Måleri Åhus',
+    'Beskriv ditt projekt och begär en kostnadsfri offert för invändigt måleri, fasadmålning, tapetsering eller totalentreprenad i Åhus och Skåne med omnejd.'
   );
   const [name, setName]       = useState('');
   const [email, setEmail]     = useState('');
@@ -266,7 +266,7 @@ export default function Quote() {
                     fontSize: '1.4rem',
                     margin: '0 0 16px 0',
                   }}>
-                    Varför välja LiDe Måleri AB?
+                    Varför välja J Måleri Åhus?
                   </h3>
                   <p style={{ color: 'var(--color-gray-600)', fontSize: '0.96rem', lineHeight: 1.7, margin: 0 }}>
                     Vi kombinerar gediget hantverkskunnande med personlig service, fasta priser och högkvalitativa färgval.
@@ -287,8 +287,8 @@ export default function Quote() {
                     },
                     {
                       icon: Award,
-                      title: '30% ROT-avdrag direkt',
-                      desc: 'Vi administrerar hela ROT-avdraget direkt mot Skatteverket och drar beloppet på fakturan.',
+                      title: '30% ROT avdrag direkt',
+                      desc: 'Vi administrerar hela ROT avdraget direkt mot Skatteverket och drar beloppet på fakturan.',
                     },
                   ].map(({ icon: Icon, title, desc }, i) => (
                     <div

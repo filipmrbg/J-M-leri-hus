@@ -12,10 +12,10 @@ const container: React.CSSProperties = {
 
 const teamMembers = [
   {
-    role: 'Målarmästare & Projektledare',
-    name: 'LiDe Måleri',
-    initials: 'L',
-    description: 'Driver projekten med stor passion för professionellt måleri, kvalitetsfärger och personlig kundservice.',
+    role: 'Målarmästare & Ägare',
+    name: 'Joakim',
+    initials: 'J',
+    description: 'Driver verksamheten med stor passion för professionellt måleri, noggrant underarbete och personlig kundservice i Åhus med omnejd.',
   },
   {
     role: 'Målare & Tapetserare',
@@ -33,8 +33,8 @@ const teamMembers = [
 
 export default function About() {
   usePageTitle(
-    'Om LiDe Måleri AB | Måleri & Tapetsering i Dalarna',
-    'Läs om LiDe Måleri AB. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering i Dalarna med omnejd.'
+    'Om J Måleri Åhus | Måleri och tapetsering i Åhus',
+    'Läs om J Måleri Åhus. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering i Åhus och Skåne med omnejd.'
   );
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -61,12 +61,12 @@ export default function About() {
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
               }}>
-                Om LiDe Måleri AB
+                Om J Måleri Åhus
               </h1>
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.08rem', margin: '0 auto', maxWidth: '640px', lineHeight: 1.6 }}>
-                Utför allt inom invändigt och utvändigt måleri, tapetsering och renovering med yrkesstolthet i Dalarna med omnejd.
+                Utför allt inom invändigt och utvändigt måleri, tapetsering och renovering med yrkesstolthet i Åhus och Skåne med omnejd.
               </p>
             </ScrollReveal>
           </div>
@@ -83,7 +83,7 @@ export default function About() {
             alignItems: 'start',
           }}>
 
-            {/* Left: Transparent Company Logo / Image */}
+            {/* Left: Company Image */}
             <ScrollReveal animation="scale-in" easing="spring">
               <div style={{
                 position: 'sticky',
@@ -93,7 +93,7 @@ export default function About() {
               }}>
                 <img
                   src={images.about.hero.url || '/about-us.jpg'}
-                  alt="LiDe Måleri AB"
+                  alt="J Måleri Åhus"
                   loading="eager"
                   decoding="async"
                   style={{
@@ -134,7 +134,7 @@ export default function About() {
                     margin: '0 0 20px 0',
                     fontWeight: 500,
                   }}>
-                    LiDe Måleri AB erbjuder ett komplett utbud av tjänster inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering. Med bas i Dalarna verkar vi i Falun, Borlänge, Leksand, Rättvik, Mora och omnejd för både privatpersoner, bostadsrättsföreningar och företag.
+                    J Måleri Åhus erbjuder ett komplett utbud av tjänster inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering. Med bas i Åhus verkar vi i Kristianstad, Bromölla, Degeberga, Österlen och övriga Skåne för både privatpersoner, bostadsrättsföreningar och företag.
                   </p>
                   
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-text-dark)', margin: '28px 0 12px 0' }}>
@@ -154,7 +154,7 @@ export default function About() {
                     lineHeight: 1.8,
                     margin: '0 0 24px 0',
                   }}>
-                    När du anlitar LiDe Måleri AB får du en trygg kontaktperson genom hela projektet. Vi sätter stor ära i att hålla utlovade tider, täcka och lämna snyggt och städat efter oss samt leverera resultat som håller i många år framöver.
+                    När du anlitar J Måleri Åhus får du en trygg kontaktperson genom hela projektet. Vi sätter stor ära i att hålla utlovade tider, täcka och lämna snyggt och städat efter oss samt leverera resultat som håller i många år framöver.
                   </p>
 
                   {/* Founder Quote Card */}
@@ -181,7 +181,7 @@ export default function About() {
                       fontSize: '0.9rem',
                       display: 'block',
                     }}>
-                      LiDe Måleri AB
+                      Joakim, J Måleri Åhus
                     </span>
                   </div>
 
@@ -219,7 +219,7 @@ export default function About() {
                 maxWidth: '580px',
                 margin: '0 auto',
               }}>
-                Erfarna och engagerade målare som levererar kvalitet och noggrannhet i Dalarna med omnejd.
+                Erfarna och engagerade målare som levererar kvalitet och noggrannhet i Åhus med omnejd.
               </p>
             </ScrollReveal>
           </div>
