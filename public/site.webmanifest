@@ -1,0 +1,16 @@
+{
+  "name": "LiDe Måleri AB",
+  "short_name": "LiDe Måleri",
+  "description": "Måleriarbeten och tapetsering i Dalarna med omnejd.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c28447",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
