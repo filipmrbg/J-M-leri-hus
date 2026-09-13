@@ -51,10 +51,10 @@ const homeFaqItems = [
 ];
 
 const heroSlides = [
-  { url: '/hero-slides/slide-1.jpg', alt: 'J Måleri Åhus professionellt måleri' },
-  { url: '/hero-slides/slide-2.jpg', alt: 'Invändigt måleri och tapetsering' },
-  { url: '/hero-slides/slide-3.jpg', alt: 'Högklassigt måleriarbete med perfekt finish' },
-  { url: '/hero-slides/slide-4.jpg', alt: 'Fasadmålning och träskydd i Åhus' },
+  { url: '/hero-slides/slide-1.webp', alt: 'J Måleri Åhus professionellt måleri' },
+  { url: '/hero-slides/slide-2.webp', alt: 'Invändigt måleri och tapetsering' },
+  { url: '/hero-slides/slide-3.webp', alt: 'Högklassigt måleriarbete med perfekt finish' },
+  { url: '/hero-slides/slide-4.webp', alt: 'Fasadmålning och träskydd i Åhus' },
 ];
 
 export default function Home() {
@@ -134,6 +134,10 @@ export default function Home() {
                 <img
                   src={slide.url}
                   alt={slide.alt}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding={index === 0 ? 'sync' : 'async'}
+                  // @ts-expect-error fetchPriority is supported in modern browsers
+                  fetchpriority={index === 0 ? 'high' : 'auto'}
                   style={{
                     width: '100%',
                     height: '100%',
