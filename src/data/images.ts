@@ -12,6 +12,7 @@ export interface ImageSlot {
 export interface SiteImages {
   logo: ImageSlot;
   logoDark?: ImageSlot;
+  ogImage?: ImageSlot;
   hero: {
     background: ImageSlot;
   };
@@ -44,6 +45,10 @@ const images: SiteImages = {
   logoDark: {
     url: '/logo-dark.png',
     alt: 'J Måleri Åhus',
+  },
+  ogImage: {
+    url: '/og-image.png',
+    alt: 'J Måleri Åhus Logotyp',
   },
 
   hero: {
