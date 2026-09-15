@@ -204,7 +204,7 @@ export default function Home() {
                 display: 'block',
                 marginBottom: '14px',
               }}>
-                ÅHUS • KRISTIANSTAD MED OMNEJD
+                ÅHUS • KRISTIANSTAD
               </span>
             </ScrollReveal>
 
@@ -236,7 +236,7 @@ export default function Home() {
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Allt inom invändig och utvändig målning samt tapetsering i Åhus med omnejd. Noggrant utfört med högsta kvalitet och personlig service.
+                Allt inom invändig och utvändig målning samt tapetsering i Åhus/Kristianstad med omnejd. Noggrant utfört med högsta kvalitet och personlig service.
               </p>
             </ScrollReveal>
 

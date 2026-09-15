@@ -68,12 +68,40 @@ const images: SiteImages = {
       alt: 'Utvändigt måleri och fasadrenovering i Åhus/Kristianstad med omnejd',
     },
     'tapetsering': {
-      url: '/gallery/gallery-4.jpg',
+      url: 'https://i.imgur.com/omZyW82.png',
       alt: 'Tapetsering och mönsterpassning i Åhus/Kristianstad med omnejd',
     },
   },
 
   gallery: [
+    {
+      url: 'https://i.imgur.com/omZyW82.png',
+      alt: 'J Måleri Åhus mönstertapetsering i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/w7Imch0.png',
+      alt: 'J Måleri Åhus invändigt måleriarbete i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/TCqPMOb.png',
+      alt: 'J Måleri Åhus vägg- och takmålning i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/tsR8qm7.png',
+      alt: 'J Måleri Åhus måleriprojekt i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/jsb4nja.png',
+      alt: 'J Måleri Åhus rumsförnyelse och kulörbyte i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/ZssWOfc.png',
+      alt: 'J Måleri Åhus precisionsmåleri i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/UnQ03uU.png',
+      alt: 'J Måleri Åhus noggrant underarbete och finish i Åhus/Kristianstad med omnejd',
+    },
     {
       url: '/fasadmalning.png',
       alt: 'J Måleri Åhus fasadmålning och utvändigt måleriarbete i Åhus/Kristianstad med omnejd',
@@ -85,10 +113,6 @@ const images: SiteImages = {
     {
       url: '/gallery/gallery-3.jpg',
       alt: 'J Måleri Åhus tak och snickerimålning i Åhus/Kristianstad med omnejd',
-    },
-    {
-      url: '/gallery/gallery-4.jpg',
-      alt: 'J Måleri Åhus mönstertapetsering och fondvägg i Åhus/Kristianstad med omnejd',
     },
     {
       url: '/gallery/gallery-5.jpg',
@@ -135,6 +159,62 @@ const images: SiteImages = {
   portfolio: [
     {
       image: {
+        url: 'https://i.imgur.com/omZyW82.png',
+        alt: 'Mönstertapetsering fondvägg i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Mönstertapetsering & Fondvägg',
+      category: 'Tapetsering',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/w7Imch0.png',
+        alt: 'Invändigt måleri och finish i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Invändig Målning & Detaljarbete',
+      category: 'Inomhusmåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/TCqPMOb.png',
+        alt: 'Tak- och väggmålning i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Tak- & Väggmålning',
+      category: 'Inomhusmåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/tsR8qm7.png',
+        alt: 'Måleriarbete och rumsförnyelse i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Rumsförnyelse & Kulörbyte',
+      category: 'Inomhusmåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/jsb4nja.png',
+        alt: 'Ytbehandling och måleri i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Ytbehandling & Finish',
+      category: 'Inomhusmåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/ZssWOfc.png',
+        alt: 'Precisionsmåleri snickerier i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Snickeri- & Detaljmålning',
+      category: 'Snickerimåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/UnQ03uU.png',
+        alt: 'Slutfinish och måleri i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Slutfinish & Ytfinish',
+      category: 'Måleri',
+    },
+    {
+      image: {
         url: '/fasadmalning.png',
         alt: 'Fasadmålning villa i Åhus/Kristianstad med omnejd',
       },
@@ -146,23 +226,7 @@ const images: SiteImages = {
         url: '/gallery/gallery-2.jpg',
         alt: 'Invändigt måleri och rumsförnyelse i Åhus/Kristianstad med omnejd',
       },
-      title: 'Invändig Målning & Kulörbyte',
-      category: 'Inomhusmåleri',
-    },
-    {
-      image: {
-        url: '/gallery/gallery-3.jpg',
-        alt: 'Tak- och väggmålning i Åhus/Kristianstad med omnejd',
-      },
-      title: 'Tak, Väggar & Snickerier',
-      category: 'Måleri',
-    },
-    {
-      image: {
-        url: '/gallery/gallery-4.jpg',
-        alt: 'Ytfinish och väggmålning i Åhus/Kristianstad med omnejd',
-      },
-      title: 'Spackling & Ytfinish',
+      title: 'Invändig Målning & Kulörval',
       category: 'Inomhusmåleri',
     },
     {

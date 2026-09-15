@@ -101,8 +101,8 @@ Vi börjar alltid med noggrann fasadtvätt, skrapning av lös färg och grundolj
     detailedDescription: `Att tapetsera kräver noggrannhet och rätt teknik för att skarvar och mönster ska stämma perfekt. J Måleri Åhus har lång erfarenhet av att sätta upp allt från mönstrade designtapeter och fototapeter till armeringsduk och renoveringstapeter.
 
 Vi säkerställer att underlaget är fullständigt slätt och grundbehandlat innan tapetsering så att slutresultatet blir helt felfritt.`,
-    heroImage: '/gallery/gallery-4.jpg',
-    image: '/gallery/gallery-4.jpg',
+    heroImage: 'https://i.imgur.com/omZyW82.png',
+    image: 'https://i.imgur.com/omZyW82.png',
     href: '/tjanster#tapetsering',
     tag: 'Tapetsering',
     badge: 'Hög Precision',
