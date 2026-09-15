@@ -429,12 +429,28 @@ export default function ProjectsGallery() {
         }
 
         @media (max-width: 768px) {
+          .marquee-track {
+            animation-duration: 20s;
+            gap: 16px;
+          }
           .marquee-card {
-            width: 290px;
-            height: 220px;
+            width: 280px;
+            height: 210px;
+            border-radius: 14px;
           }
           .marquee-fade {
-            width: 30px;
+            width: 25px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .marquee-track {
+            animation-duration: 18s;
+            gap: 14px;
+          }
+          .marquee-card {
+            width: 260px;
+            height: 195px;
           }
         }
       `}</style>
