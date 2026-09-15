@@ -104,8 +104,8 @@ export default function Home() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'hidden',
-        paddingTop: '120px',
-        paddingBottom: '80px',
+        paddingTop: 'clamp(70px, 10vh, 110px)',
+        paddingBottom: '60px',
         boxSizing: 'border-box',
       }}>
         {/* Hero Background Slideshow (Nelhages-inspired) */}
@@ -161,19 +161,39 @@ export default function Home() {
           zIndex: 1,
         }} />
 
-        <div style={{ ...container, position: 'relative', zIndex: 2, width: '100%', display: 'flex', justifyContent: 'flex-start' }}>
+        <div style={{ ...container, position: 'relative', zIndex: 2, width: '100%', display: 'flex', justifyContent: 'center' }}>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
-            alignItems: 'flex-start',
-            textAlign: 'left',
-            maxWidth: '720px',
-            margin: '0',
-            paddingTop: '60px',
-            paddingBottom: '40px',
+            alignItems: 'center',
+            textAlign: 'center',
+            maxWidth: '760px',
+            margin: '0 auto',
+            paddingTop: '0px',
+            paddingBottom: '30px',
           }}>
+            {/* Prominent Center Brand Logo (Reference Layout) */}
+            <ScrollReveal animation="fade-down" delay={0} duration={0.7}>
+              <div style={{
+                marginBottom: '18px',
+                display: 'flex',
+                justifyContent: 'center',
+              }}>
+                <img
+                  src={images.logo.url}
+                  alt={images.logo.alt}
+                  style={{
+                    width: 'clamp(175px, 45vw, 255px)',
+                    height: 'auto',
+                    display: 'block',
+                    filter: 'drop-shadow(0 8px 30px rgba(0, 0, 0, 0.95))',
+                  }}
+                />
+              </div>
+            </ScrollReveal>
+
             {/* Top Location Line */}
-            <ScrollReveal animation="fade-down" delay={0} duration={0.6}>
+            <ScrollReveal animation="fade-down" delay={100} duration={0.6}>
               <span style={{
                 fontFamily: "'Outfit', sans-serif",
                 letterSpacing: '0.24em',
@@ -188,45 +208,47 @@ export default function Home() {
               </span>
             </ScrollReveal>
 
-            {/* Clean & Modern Sans-Serif Headline (H1) */}
-            <ScrollReveal animation="fade-up" delay={100} duration={0.8}>
+            {/* Headline (H1) based on Insta bio */}
+            <ScrollReveal animation="fade-up" delay={200} duration={0.8}>
               <h1 style={{
                 fontFamily: "'Outfit', sans-serif",
                 color: '#ffffff',
-                fontSize: 'clamp(2.8rem, 5.6vw, 4.4rem)',
+                fontSize: 'clamp(1.75rem, 3.6vw, 2.9rem)',
                 fontWeight: 700,
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                margin: '0 0 20px 0',
+                lineHeight: 1.2,
+                letterSpacing: '-0.01em',
+                margin: '0 0 14px 0',
                 textShadow: '0 3px 20px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9)',
               }}>
-                J Måleri Åhus
+                Professionellt måleri för privatpersoner & företag
               </h1>
             </ScrollReveal>
 
-            {/* Subtitle / Description */}
-            <ScrollReveal animation="fade-up" delay={200} duration={0.8}>
+            {/* Subtitle / Description - Clean, grounded & high quality */}
+            <ScrollReveal animation="fade-up" delay={300} duration={0.8}>
               <p style={{
                 fontFamily: "'Outfit', 'Plus Jakarta Sans', sans-serif",
-                color: 'rgba(255, 255, 255, 0.88)',
-                fontSize: 'clamp(1rem, 1.8vw, 1.18rem)',
-                lineHeight: 1.65,
-                maxWidth: '600px',
-                margin: '0 0 36px 0',
+                color: 'rgba(255, 255, 255, 0.92)',
+                fontSize: 'clamp(0.95rem, 1.4vw, 1.1rem)',
+                lineHeight: 1.55,
+                maxWidth: '560px',
+                margin: '0 auto 28px auto',
                 textShadow: '0 2px 12px rgba(0, 0, 0, 0.85)',
                 fontWeight: 400,
               }}>
-                Professionella måleriarbeten och tapetsering i Åhus med omnejd för privatpersoner och företag. Från noggrant underarbete och invändig målning till hållbar fasadmålning med högsta precision och yrkesstolthet.
+                Allt inom invändig och utvändig målning samt tapetsering i Åhus med omnejd. Noggrant utfört med högsta kvalitet och personlig service.
               </p>
             </ScrollReveal>
 
             {/* Action Buttons */}
-            <ScrollReveal animation="fade-up" delay={300} duration={0.8}>
+            <ScrollReveal animation="fade-up" delay={400} duration={0.8}>
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '16px',
                 flexWrap: 'wrap',
+                width: '100%',
               }}>
                 <Button variant="primary" size="lg" href="/offert">
                   Begär kostnadsfri offert

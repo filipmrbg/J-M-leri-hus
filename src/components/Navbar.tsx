@@ -122,6 +122,9 @@ export default function Navbar() {
     }
   }
 
+  const isHome = location.pathname === '/';
+  const showNavbarLogo = !isHome || scrolled;
+
   return (
     <>
       <nav
@@ -145,17 +148,19 @@ export default function Navbar() {
           transition: 'background 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding 0.5s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), -webkit-backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
-        {/* Logo */}
+        {/* Logo — hidden at the very top of startsidan, smoothly fades in on scroll */}
         <Link
           to="/"
           onClick={handleLogoClick}
+          className="nav-logo-link"
           style={{
             textDecoration: 'none',
             flexShrink: 0,
             display: 'flex',
             alignItems: 'center',
-            opacity: 1,
-            transform: 'scale(1)',
+            opacity: showNavbarLogo ? 1 : 0,
+            pointerEvents: showNavbarLogo ? 'auto' : 'none',
+            transform: showNavbarLogo ? 'scale(1) translateY(0)' : 'scale(0.85) translateY(-4px)',
             transformOrigin: 'left center',
             transition: 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
           }}
@@ -382,7 +387,7 @@ export default function Navbar() {
           </Link>
 
           {/* Phone icon — shown on mobile only */}
-          <div className="mobile-phone-btn" style={{ position: 'relative', display: 'none' }}>
+          <div className="mobile-phone-btn" style={{ position: 'relative' }}>
             <a
               href="tel:0768899716"
               aria-label="Ring oss"
@@ -393,15 +398,16 @@ export default function Navbar() {
                 width: '40px',
                 height: '40px',
                 borderRadius: '50%',
-                background: 'rgba(255, 255, 255, 0.08)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                color: 'var(--color-white)',
+                background: 'rgba(255, 255, 255, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                color: '#ffffff',
                 cursor: 'pointer',
                 flexShrink: 0,
-                transition: 'background 0.2s ease, color 0.2s ease',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease',
               }}
             >
-              <Phone size={18} />
+              <Phone size={20} color="#ffffff" />
             </a>
           </div>
 
@@ -554,8 +560,8 @@ export default function Navbar() {
           height: 15px;
         }
         .nav-logo {
-          height: 152px;
-          max-height: 24vh;
+          height: 185px;
+          max-height: 26vh;
           width: auto;
           display: block;
           object-fit: contain;
@@ -567,11 +573,14 @@ export default function Navbar() {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .nav-logo.scrolled {
-          height: 98px;
+          height: 120px;
           background-color: transparent;
           padding: 0;
           border-radius: 0;
           box-shadow: none;
+        }
+        .mobile-phone-btn {
+          display: none;
         }
         @media (max-width: 1024px) {
           .phone-link { display: none !important; }
@@ -580,15 +589,15 @@ export default function Navbar() {
           .nav-pill { display: none !important; }
           .hamburger { display: flex !important; }
           .offert-btn { display: none !important; }
-          nav.navbar-el { padding: 14px 20px !important; }
-          nav.navbar-el.scrolled { padding: 10px 20px !important; }
-          .mobile-phone-btn { display: flex !important; align-items: center; }
+          .mobile-phone-btn { display: flex !important; }
+          nav.navbar-el { padding: 12px 18px !important; }
+          nav.navbar-el.scrolled { padding: 8px 18px !important; }
           .nav-logo {
             height: 90px;
             padding: 0;
           }
           .nav-logo.scrolled {
-            height: 68px;
+            height: 72px;
             padding: 0;
           }
         }
