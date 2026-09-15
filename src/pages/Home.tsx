@@ -42,7 +42,7 @@ const homeFaqItems = [
   },
   {
     question: 'Hjälper ni till med både små och stora måleriprojekt?',
-    answer: 'Ja, vi åtar oss allt från målning av ett enskilt rum eller tapetsering till fullständig fasadmålning och större målerientreprenader.',
+    answer: 'Ja, vi åtar oss allt från målning av ett enskilt rum eller tapetsering till fullständig fasadmålning och rumsrenovering.',
   },
   {
     question: 'Hur går processen till från start till mål?',
@@ -59,8 +59,8 @@ const heroSlides = [
 
 export default function Home() {
   usePageTitle(
-    'J Måleri Åhus | Måleri och tapetsering i Åhus med omnejd',
-    'J Måleri Åhus utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Åhus och Skåne med omnejd för privatpersoner och företag. Kontakta oss för fri offert!'
+    'J Måleri Åhus | Måleri och tapetsering i Åhus & Kristianstad',
+    'J Måleri Åhus utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Åhus/Kristianstad med omnejd för privatpersoner och företag. Kontakta oss för fri offert!'
   );
 
   const heroBgRef = useRef<HTMLDivElement>(null);
@@ -204,7 +204,7 @@ export default function Home() {
                 display: 'block',
                 marginBottom: '14px',
               }}>
-                ÅHUS • KRISTIANSTAD • SKÅNE
+                ÅHUS • KRISTIANSTAD MED OMNEJD
               </span>
             </ScrollReveal>
 
@@ -335,7 +335,7 @@ export default function Home() {
                   lineHeight: 1.65,
                   margin: '0 0 12px 0',
                 }}>
-                  Från invändig målning och tapetsering till fasadmålning och totalentreprenad i Åhus, Kristianstad och hela nordöstra Skåne.
+                  Från invändig målning och tapetsering till komplett fasadmålning i Åhus/Kristianstad med omnejd.
                 </p>
                 <Link
                   to="/tjanster"
@@ -468,7 +468,7 @@ export default function Home() {
                     'En och samma kontaktperson genom hela projektet',
                     'Tydliga offerter, fasta priser och direkt ROT avdrag (30%)',
                     'Noggrant underarbete och kvalitetsfärg för maximal livslängd',
-                    'Lokal närvaro och personlig service i Åhus och nordöstra Skåne',
+                    'Lokal närvaro och personlig service i Åhus/Kristianstad med omnejd',
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                       <CheckCircle2 size={24} color="var(--color-primary)" style={{ flexShrink: 0 }} />

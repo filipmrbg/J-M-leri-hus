@@ -22,7 +22,7 @@ const faqItems = [
   },
   {
     question: 'Vilka områden är ert huvudsakliga upptagningsområde?',
-    answer: 'Vi har vår bas i Åhus och utför uppdrag i Kristianstad, Yngsjö, Degeberga, Bromölla, Österlen och övriga Skåne.',
+    answer: 'Vi har vår bas i Åhus och utför uppdrag i Åhus, Kristianstad, Yngsjö, Degeberga, Bromölla och närområdet.',
   },
   {
     question: 'Kan jag boka ett kostnadsfritt platsbesök?',
@@ -57,8 +57,8 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) 
 
 export default function Contact() {
   usePageTitle(
-    'Kontakta J Måleri Åhus | Åhus & Skåne',
-    'Kontakta J Måleri Åhus. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Åhus och Skåne med omnejd. Ring 076-889 97 16.'
+    'Kontakta J Måleri Åhus | Åhus & Kristianstad',
+    'Kontakta J Måleri Åhus. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning i Åhus/Kristianstad med omnejd. Ring 076-889 97 16.'
   );
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -124,7 +124,7 @@ export default function Contact() {
                 Så når du oss
               </h2>
               <p style={{ color: 'var(--color-gray-600)', fontSize: '1rem', lineHeight: 1.8, margin: 0 }}>
-                Du kan nå oss via formuläret, telefon eller e-post. Oavsett om det gäller inomhusmålning, tapetsering, fasadmålning eller större entreprenader hjälper vi dig gärna.
+                Du kan nå oss via formuläret, telefon eller e-post. Oavsett om det gäller inomhusmålning, tapetsering eller fasadmålning hjälper vi dig gärna.
               </p>
 
               <div style={{ marginTop: '40px', display: 'flex', flexDirection: 'column', gap: '24px' }}>
@@ -176,7 +176,7 @@ export default function Contact() {
                       Plats & Område
                     </p>
                     <p style={{ margin: 0, color: 'var(--color-gray-600)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                      Bas i Åhus • Kristianstad, Yngsjö, Degeberga & hela Skåne
+                      Bas i Åhus • Åhus/Kristianstad med omnejd
                     </p>
                   </div>
                 </div>

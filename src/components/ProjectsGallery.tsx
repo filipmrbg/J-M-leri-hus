@@ -122,7 +122,7 @@ export default function ProjectsGallery() {
                   margin: 0,
                 }}
               >
-                Här kan du se exempel på våra färdigställda måleriprojekt i Åhus och Skåne med omnejd. Hovra över bandet för att pausa eller klicka på en bild för att förstora.
+                Här kan du se exempel på våra färdigställda måleriprojekt i Åhus/Kristianstad med omnejd. Hovra över bandet för att pausa eller klicka på en bild för att förstora.
               </p>
             </ScrollReveal>
           </div>

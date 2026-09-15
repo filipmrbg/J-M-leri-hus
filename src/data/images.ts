@@ -40,11 +40,11 @@ export interface SiteImages {
 const images: SiteImages = {
   logo: {
     url: '/logo.png',
-    alt: 'J Måleri Åhus',
+    alt: 'J Måleri Åhus - Måleri i Åhus/Kristianstad med omnejd',
   },
   logoDark: {
     url: '/logo-dark.png',
-    alt: 'J Måleri Åhus',
+    alt: 'J Måleri Åhus - Måleri i Åhus/Kristianstad med omnejd',
   },
   ogImage: {
     url: '/og-image.png',
@@ -54,71 +54,67 @@ const images: SiteImages = {
   hero: {
     background: {
       url: '/hero-main.webp',
-      alt: 'J Måleri Åhus måleriarbeten i Åhus och Skåne med omnejd',
+      alt: 'J Måleri Åhus måleriarbeten i Åhus/Kristianstad med omnejd',
     },
   },
 
   services: {
     'invandigt-maleri': {
       url: '/gallery/gallery-2.jpg',
-      alt: 'Invändigt måleri och tapetsering i Åhus',
+      alt: 'Invändigt måleri och tapetsering i Åhus/Kristianstad med omnejd',
     },
     'fasadmalning': {
       url: '/fasadmalning.png',
-      alt: 'Utvändigt måleri och fasadrenovering i Åhus',
+      alt: 'Utvändigt måleri och fasadrenovering i Åhus/Kristianstad med omnejd',
     },
     'tapetsering': {
       url: '/gallery/gallery-4.jpg',
-      alt: 'Tapetsering, spackling och ytfinish',
-    },
-    'totalentreprenad': {
-      url: '/gallery/gallery-6.jpg',
-      alt: 'Totalentreprenad måleri för villa och fastighet',
+      alt: 'Tapetsering, spackling och ytfinish i Åhus/Kristianstad med omnejd',
     },
   },
 
   gallery: [
     {
       url: '/fasadmalning.png',
-      alt: 'J Måleri Åhus fasadmålning och utvändigt måleriarbete',
+      alt: 'J Måleri Åhus fasadmålning och utvändigt måleriarbete i Åhus/Kristianstad med omnejd',
     },
     {
       url: '/gallery/gallery-2.jpg',
-      alt: 'J Måleri Åhus invändig målning och väggfinish',
+      alt: 'J Måleri Åhus invändig målning och väggfinish i Åhus/Kristianstad med omnejd',
     },
     {
       url: '/gallery/gallery-3.jpg',
-      alt: 'J Måleri Åhus tak och snickerimålning',
+      alt: 'J Måleri Åhus tak och snickerimålning i Åhus/Kristianstad med omnejd',
     },
     {
       url: '/gallery/gallery-4.jpg',
-      alt: 'J Måleri Åhus mönstertapetsering och fondvägg',
+      alt: 'J Måleri Åhus mönstertapetsering och fondvägg i Åhus/Kristianstad med omnejd',
     },
     {
       url: '/gallery/gallery-5.jpg',
-      alt: 'J Måleri Åhus detaljarbete och snickerifinish',
+      alt: 'J Måleri Åhus detaljarbete och snickerifinish i Åhus/Kristianstad med omnejd',
     },
     {
       url: '/gallery/gallery-6.jpg',
-      alt: 'J Måleri Åhus färdigställt måleriprojekt',
+      alt: 'J Måleri Åhus färdigställt måleriprojekt i Åhus/Kristianstad med omnejd',
     },
   ],
 
   cta: {
     banner: {
       url: '/hero-main.webp',
-      alt: 'J Måleri Åhus måleriprojekt',
+      alt: 'J Måleri Åhus måleriprojekt i Åhus/Kristianstad med omnejd',
     },
     midSection: {
       url: '/hero-main.webp',
-      alt: 'J Måleri arbetsplats Åhus',
+      alt: 'J Måleri arbetsplats i Åhus/Kristianstad med omnejd',
     },
   },
 
   about: {
     hero: {
       url: '/about-us.jpg',
-      alt: 'J Måleri Åhus verksamhet och måleriarbete i Åhus',
+      alt: 'J Måleri Åhus verksamhet och måleriarbete i Åhus/Kristianstad med omnejd',
     },
     teamMember: {
       url: '/logo.png',
@@ -128,19 +124,19 @@ const images: SiteImages = {
 
   whyChooseUs: {
     url: '/why-choose-us.webp',
-    alt: 'Noggrant måleriarbete i detalj',
+    alt: 'Noggrant måleriarbete i detalj - J Måleri Åhus',
   },
 
   ideaToResult: {
     url: '/idea-to-result.webp',
-    alt: 'Från planering till perfekt målat resultat',
+    alt: 'Från planering till perfekt målat resultat i Åhus/Kristianstad med omnejd',
   },
 
   portfolio: [
     {
       image: {
         url: '/fasadmalning.png',
-        alt: 'Fasadmålning villa i Åhus',
+        alt: 'Fasadmålning villa i Åhus/Kristianstad med omnejd',
       },
       title: 'Fasadmålning & Träskydd Villa',
       category: 'Fasadmålning',
@@ -148,7 +144,7 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-2.jpg',
-        alt: 'Invändigt måleri och rumsförnyelse',
+        alt: 'Invändigt måleri och rumsförnyelse i Åhus/Kristianstad med omnejd',
       },
       title: 'Invändig Målning & Kulörbyte',
       category: 'Inomhusmåleri',
@@ -156,7 +152,7 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-3.jpg',
-        alt: 'Tak- och väggmålning Åhus',
+        alt: 'Tak- och väggmålning i Åhus/Kristianstad med omnejd',
       },
       title: 'Tak, Väggar & Snickerier',
       category: 'Måleri',
@@ -164,7 +160,7 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-4.jpg',
-        alt: 'Ytfinish och väggmålning',
+        alt: 'Ytfinish och väggmålning i Åhus/Kristianstad med omnejd',
       },
       title: 'Spackling & Ytfinish',
       category: 'Inomhusmåleri',
@@ -172,7 +168,7 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-5.jpg',
-        alt: 'Snickerimålning och detaljarbete',
+        alt: 'Snickerimålning och detaljarbete i Åhus/Kristianstad med omnejd',
       },
       title: 'Dörr- & Fönstermålning',
       category: 'Snickerimåleri',
@@ -180,10 +176,10 @@ const images: SiteImages = {
     {
       image: {
         url: '/gallery/gallery-6.jpg',
-        alt: 'Helhetsentreprenad måleri Skåne',
+        alt: 'Invändig målning och renovering i Åhus/Kristianstad med omnejd',
       },
-      title: 'Totalrenovering Måleri',
-      category: 'Helhetsmåleri',
+      title: 'Villamålning & Renovering',
+      category: 'Inomhusmåleri',
     },
   ],
 };

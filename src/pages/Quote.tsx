@@ -54,7 +54,7 @@ function blurInput(e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | 
 export default function Quote() {
   usePageTitle(
     'Begär offert | J Måleri Åhus',
-    'Beskriv ditt projekt och begär en kostnadsfri offert för invändigt måleri, fasadmålning, tapetsering eller totalentreprenad i Åhus och Skåne med omnejd.'
+    'Beskriv ditt projekt och begär en kostnadsfri offert för invändigt måleri, fasadmålning eller tapetsering i Åhus/Kristianstad med omnejd.'
   );
   const [name, setName]       = useState('');
   const [email, setEmail]     = useState('');
@@ -205,7 +205,6 @@ export default function Quote() {
                       <option value="invandigt-maleri">Invändigt Måleri & Snickerier</option>
                       <option value="fasadmalning">Utvändigt Måleri & Fasad</option>
                       <option value="tapetsering">Tapetsering & Spackling</option>
-                      <option value="totalentreprenad">Totalentreprenad Måleri</option>
                       <option value="annat">Annat måleriarbete</option>
                     </select>
                   </div>

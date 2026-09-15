@@ -10,31 +10,10 @@ const container: React.CSSProperties = {
   padding: '0 clamp(20px, 5vw, 40px)',
 };
 
-const teamMembers = [
-  {
-    role: 'Målarmästare & Ägare',
-    name: 'Joakim',
-    initials: 'J',
-    description: 'Driver verksamheten med stor passion för professionellt måleri, noggrant underarbete och personlig kundservice i Åhus med omnejd.',
-  },
-  {
-    role: 'Målare & Tapetserare',
-    name: 'Andreas N.',
-    initials: 'A',
-    description: 'Mångårig erfarenhet inom invändig målning, bredspackling, mönstertapetsering och fönsterrenovering.',
-  },
-  {
-    role: 'Målare & Fasadspecialist',
-    name: 'Fredrik S.',
-    initials: 'F',
-    description: 'Specialist på utvändigt måleri, fasadbehandlingar, trävård och sprutmålning med perfekt täckning.',
-  },
-];
-
 export default function About() {
   usePageTitle(
     'Om J Måleri Åhus | Måleri och tapetsering i Åhus',
-    'Läs om J Måleri Åhus. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering i Åhus och Skåne med omnejd.'
+    'Läs om J Måleri Åhus. Vi utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering i Åhus/Kristianstad med omnejd.'
   );
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -66,7 +45,7 @@ export default function About() {
             </ScrollReveal>
             <ScrollReveal animation="fade-up" delay={150}>
               <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.08rem', margin: '0 auto', maxWidth: '640px', lineHeight: 1.6 }}>
-                Utför allt inom invändigt och utvändigt måleri, tapetsering och renovering med yrkesstolthet i Åhus och Skåne med omnejd.
+                Utför allt inom invändigt och utvändigt måleri, tapetsering och renovering med yrkesstolthet i Åhus/Kristianstad med omnejd.
               </p>
             </ScrollReveal>
           </div>
@@ -134,7 +113,7 @@ export default function About() {
                     margin: '0 0 20px 0',
                     fontWeight: 500,
                   }}>
-                    J Måleri Åhus erbjuder ett komplett utbud av tjänster inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering. Med bas i Åhus verkar vi i Kristianstad, Bromölla, Degeberga, Österlen och övriga Skåne för både privatpersoner, bostadsrättsföreningar och företag.
+                    J Måleri Åhus erbjuder ett komplett utbud av tjänster inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering. Med bas i Åhus verkar vi i Kristianstad, Yngsjö, Degeberga, Bromölla och närområdet för både privatpersoner och företag.
                   </p>
                   
                   <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-text-dark)', margin: '28px 0 12px 0' }}>
@@ -192,128 +171,6 @@ export default function About() {
               </ScrollReveal>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION D: TEAM PROFILES (3 PERSONS) ──────────────────────────── */}
-      <section style={{ background: '#ffffff', padding: '90px 0', borderTop: '1px solid #e2e8f0' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 clamp(20px, 5vw, 40px)' }}>
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <ScrollReveal animation="blur-in">
-              <h2 style={{
-                color: 'var(--color-text-dark)',
-                fontWeight: 800,
-                fontSize: 'clamp(2rem, 3.4vw, 2.6rem)',
-                letterSpacing: '-0.03em',
-                margin: '0 0 12px 0',
-              }}>
-                Möt vårt team
-              </h2>
-            </ScrollReveal>
-            <ScrollReveal animation="fade-up" delay={100}>
-              <p style={{
-                color: 'var(--color-gray-600)',
-                fontSize: '1rem',
-                lineHeight: 1.7,
-                maxWidth: '580px',
-                margin: '0 auto',
-              }}>
-                Erfarna och engagerade målare som levererar kvalitet och noggrannhet i Åhus med omnejd.
-              </p>
-            </ScrollReveal>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '28px',
-          }} className="team-grid">
-            {teamMembers.map((member, i) => (
-              <ScrollReveal key={i} animation="slide-up-fade" delay={i * 120}>
-                <div style={{
-                  background: '#f8fafc',
-                  borderRadius: '20px',
-                  overflow: 'hidden',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
-                  textAlign: 'center',
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-6px)';
-                  e.currentTarget.style.boxShadow = '0 16px 36px rgba(0, 0, 0, 0.09)';
-                  e.currentTarget.style.borderColor = 'rgba(194, 132, 71, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.04)';
-                  e.currentTarget.style.borderColor = '#e2e8f0';
-                }}
-                >
-                  <div style={{
-                    padding: '36px 28px 28px 28px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    flex: 1,
-                  }}>
-                    {/* Circle Avatar with Initials */}
-                    <div style={{
-                      width: '84px',
-                      height: '84px',
-                      borderRadius: '50%',
-                      background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-                      border: '3px solid var(--color-primary)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: '#ffffff',
-                      fontSize: '1.8rem',
-                      fontWeight: 800,
-                      letterSpacing: '-0.02em',
-                      marginBottom: '20px',
-                      boxShadow: '0 8px 20px rgba(194, 132, 71, 0.25)',
-                    }}>
-                      {member.initials}
-                    </div>
-
-                    <h3 style={{
-                      color: 'var(--color-text-dark)',
-                      fontWeight: 800,
-                      fontSize: '1.25rem',
-                      margin: '0 0 6px 0',
-                    }}>
-                      {member.name}
-                    </h3>
-
-                    <span style={{
-                      color: 'var(--color-primary)',
-                      fontWeight: 700,
-                      fontSize: '0.86rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                      marginBottom: '16px',
-                      display: 'block',
-                    }}>
-                      {member.role}
-                    </span>
-
-                    <p style={{
-                      color: 'var(--color-gray-600)',
-                      fontSize: '0.92rem',
-                      lineHeight: 1.65,
-                      margin: 0,
-                    }}>
-                      {member.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
           </div>
         </div>
       </section>

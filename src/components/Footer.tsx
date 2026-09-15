@@ -51,7 +51,7 @@ export default function Footer() {
               </Link>
             </div>
             <p style={{ color: 'var(--color-gray-600)', fontSize: '0.9rem', lineHeight: 1.7, margin: '0 0 20px 0' }}>
-              J Måleri Åhus utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning med högsta kvalitet och yrkesstolthet i Åhus och Skåne med omnejd.
+              J Måleri Åhus utför allt inom invändigt och utvändigt måleri, tapetsering, spackling och fasadmålning med högsta kvalitet och yrkesstolthet i Åhus/Kristianstad med omnejd.
             </p>
             <div style={{ display: 'flex', gap: '12px' }}>
               {socialIcons.map(({ Icon, label, href }) => (
@@ -149,7 +149,7 @@ export default function Footer() {
                 <div className="footer-contact-icon">
                   <MapPin size={16} strokeWidth={2} />
                 </div>
-                <span>Åhus • Kristianstad • Skåne</span>
+                <span>Åhus • Kristianstad med omnejd</span>
               </div>
             </div>
           </div>

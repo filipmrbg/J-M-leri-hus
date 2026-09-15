@@ -15,7 +15,7 @@ const container: React.CSSProperties = {
 export default function ServicesOverview() {
   usePageTitle(
     'Våra Tjänster | J Måleri Åhus',
-    'Utforska våra måleritjänster: Invändigt måleri, utvändigt måleri & fasad, tapetsering och helhetsentreprenad i Åhus och Skåne med omnejd.'
+    'Utforska våra måleritjänster: Invändigt måleri, utvändigt måleri & fasad samt tapetsering i Åhus/Kristianstad med omnejd.'
   );
 
   const { hash } = useLocation();
@@ -94,7 +94,7 @@ export default function ServicesOverview() {
               margin: '0 auto',
               lineHeight: 1.65,
             }}>
-              J Måleri Åhus erbjuder professionella måleritjänster, tapetsering och fasadunderhåll i Åhus och Skåne med omnejd.
+              J Måleri Åhus erbjuder professionella måleritjänster, tapetsering och fasadunderhåll i Åhus/Kristianstad med omnejd.
             </p>
           </ScrollReveal>
         </div>
