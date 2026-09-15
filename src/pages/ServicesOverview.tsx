@@ -101,24 +101,19 @@ export default function ServicesOverview() {
       </section>
 
 
-      {/* ── STICKY ANCHOR TAB BAR ──────────────────────────── */}
+      {/* ── QUICK JUMP NAVIGATION (STATIC, DOES NOT FOLLOW ON SCROLL) ──────────────────────────── */}
       <div style={{
-        position: 'sticky',
-        top: '72px',
-        zIndex: 40,
-        background: 'rgba(255, 255, 255, 0.95)',
-        backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        position: 'relative',
+        background: '#ffffff',
         borderBottom: '1px solid #e2e8f0',
-        padding: '12px 0',
-        boxShadow: '0 4px 20px rgba(0, 0, 0, 0.04)',
+        padding: '16px 0',
       }}>
         <div style={container}>
           <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '12px',
+            gap: '10px',
             flexWrap: 'wrap',
           }}>
             {services.map((svc) => (
@@ -126,16 +121,17 @@ export default function ServicesOverview() {
                 key={svc.slug}
                 onClick={() => scrollToSection(svc.slug)}
                 style={{
-                  background: '#f1f5f9',
+                  background: '#f8fafc',
                   border: '1px solid #e2e8f0',
-                  borderRadius: '20px',
-                  padding: '8px 20px',
-                  fontSize: '0.92rem',
+                  borderRadius: '999px',
+                  padding: '9px 20px',
+                  fontSize: '0.9rem',
                   fontWeight: 600,
                   color: '#334155',
                   cursor: 'pointer',
                   transition: 'all 0.2s ease',
                   fontFamily: 'var(--font-family)',
+                  whiteSpace: 'nowrap',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = 'var(--color-primary)';
@@ -143,7 +139,7 @@ export default function ServicesOverview() {
                   e.currentTarget.style.borderColor = 'var(--color-primary)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#f1f5f9';
+                  e.currentTarget.style.background = '#f8fafc';
                   e.currentTarget.style.color = '#334155';
                   e.currentTarget.style.borderColor = '#e2e8f0';
                 }}
