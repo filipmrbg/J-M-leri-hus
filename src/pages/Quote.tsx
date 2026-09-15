@@ -202,9 +202,9 @@ export default function Quote() {
                       onBlur={blurInput}
                     >
                       <option value="">Välj tjänst...</option>
-                      <option value="invandigt-maleri">Invändigt Måleri & Snickerier</option>
+                      <option value="invandigt-maleri">Invändigt Måleri & Spackling</option>
                       <option value="fasadmalning">Utvändigt Måleri & Fasad</option>
-                      <option value="tapetsering">Tapetsering & Spackling</option>
+                      <option value="tapetsering">Tapetsering</option>
                       <option value="annat">Annat måleriarbete</option>
                     </select>
                   </div>

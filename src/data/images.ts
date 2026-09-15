@@ -69,7 +69,7 @@ const images: SiteImages = {
     },
     'tapetsering': {
       url: '/gallery/gallery-4.jpg',
-      alt: 'Tapetsering, spackling och ytfinish i Åhus/Kristianstad med omnejd',
+      alt: 'Tapetsering och mönsterpassning i Åhus/Kristianstad med omnejd',
     },
   },
 

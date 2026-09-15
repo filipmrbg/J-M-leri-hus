@@ -36,20 +36,20 @@ export const services: ServiceItem[] = [
   {
     slug: 'invandigt-maleri',
     title: 'Invändigt Måleri',
-    shortDescription: 'Noggrann målning av väggar, tak, lister och dörrar samt underarbete med spackling och slipning för en perfekt och slät yta.',
+    shortDescription: 'Noggrann målning av väggar, tak, lister och snickerier samt grundligt underarbete med spackling, bredspackling och slipning för en perfekt och slät yta.',
     heroText: 'Skapa trivsel och nytt liv i hemmet med professionellt inomhusmåleri i Åhus/Kristianstad med omnejd.',
     detailedDescription: `Vill du förnya vardagsrummet, sovrummet eller hela bostaden med nya kulörer? J Måleri Åhus utför alla typer av invändiga måleriarbeten med stor noggrannhet och yrkesstolthet för både privatpersoner och företag.
 
-Vi lägger största vikt vid ett gediget underarbete – spackling, slipning och grundmålning – vilket är hemligheten bakom en jämn och hållbar slutfinish. Som privatperson nyttjar du 30 % ROT-avdrag direkt på fakturan.`,
+Vi lägger största vikt vid ett gediget underarbete med spackling, bredspackling, slipning och grundmålning, vilket är hemligheten bakom en jämn och hållbar slutfinish. Som privatperson nyttjar du 30 % ROT-avdrag direkt på fakturan.`,
     heroImage: '/gallery/gallery-2.jpg',
     image: '/gallery/gallery-2.jpg',
     href: '/tjanster#invandigt-maleri',
     tag: 'Invändigt Måleri',
     badge: 'ROT-avdrag 30%',
     highlights: [
-      'Målning av väggar och tak',
+      'Målning av väggar, tak och snickerier',
+      'Bredspackling, skarvspackling och slipning',
       'Målning av lister, dörrfoder och fönster',
-      'Spackling, bredspackling och slipning',
       'Färgrådgivning och personliga kulörval',
     ],
     faq: [
@@ -95,12 +95,12 @@ Vi börjar alltid med noggrann fasadtvätt, skrapning av lös färg och grundolj
   },
   {
     slug: 'tapetsering',
-    title: 'Tapetsering och spackling',
+    title: 'Tapetsering',
     shortDescription: 'Skickligt hantverk med perfekt mönsterpassning, skarvfria väggar och armeringsduk för både klassiska och moderna designtapeter.',
-    heroText: 'Sätt personlig prägel på dina rum med exakt tapetsering och högklassig ytfinish i Åhus/Kristianstad med omnejd.',
+    heroText: 'Sätt personlig prägel på dina rum med exakt tapetsering och högklassig finish i Åhus/Kristianstad med omnejd.',
     detailedDescription: `Att tapetsera kräver noggrannhet och rätt teknik för att skarvar och mönster ska stämma perfekt. J Måleri Åhus har lång erfarenhet av att sätta upp allt från mönstrade designtapeter och fototapeter till armeringsduk och renoveringstapeter.
 
-Vi säkerställer att underlaget är fullständigt slätt innan tapetsering så att slutresultatet blir helt felfritt.`,
+Vi säkerställer att underlaget är fullständigt slätt och grundbehandlat innan tapetsering så att slutresultatet blir helt felfritt.`,
     heroImage: '/gallery/gallery-4.jpg',
     image: '/gallery/gallery-4.jpg',
     href: '/tjanster#tapetsering',
@@ -108,8 +108,8 @@ Vi säkerställer att underlaget är fullständigt slätt innan tapetsering så 
     badge: 'Hög Precision',
     highlights: [
       'Mönsterpassad tapetsering och fondväggar',
+      'Uppsättning av designtapeter och fototapeter',
       'Uppsättning av armeringsduk och easy cover',
-      'Bredspackling och grundbehandling',
       'Rådgivning kring materialval och limtyp',
     ],
     faq: [
