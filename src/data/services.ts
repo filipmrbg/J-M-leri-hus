@@ -71,8 +71,8 @@ Vi lägger största vikt vid ett gediget underarbete – spackling, slipning och
     detailedDescription: `En väl underhållen fasad skyddar fastigheten mot fukt, röta och väderpåverkan. J Måleri Åhus utför kompletta utvändiga måleriarbeten på villor, fritidshus, garage och kommersiella fastigheter i Åhus och nordöstra Skåne.
 
 Vi börjar alltid med noggrann fasadtvätt, skrapning av lös färg och grundoljning innan fasaden färdigstryks med premiumfärg anpassad för vårt klimat.`,
-    heroImage: '/gallery/gallery-1.jpg',
-    image: '/gallery/gallery-1.jpg',
+    heroImage: '/fasadmalning.png',
+    image: '/fasadmalning.png',
     href: '/tjanster#fasadmalning',
     tag: 'Utvändigt Måleri',
     badge: 'Kvalitetsfärg',

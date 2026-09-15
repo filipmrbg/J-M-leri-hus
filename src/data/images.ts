@@ -64,7 +64,7 @@ const images: SiteImages = {
       alt: 'Invändigt måleri och tapetsering i Åhus',
     },
     'fasadmalning': {
-      url: '/gallery/gallery-1.jpg',
+      url: '/fasadmalning.png',
       alt: 'Utvändigt måleri och fasadrenovering i Åhus',
     },
     'tapetsering': {
@@ -79,7 +79,7 @@ const images: SiteImages = {
 
   gallery: [
     {
-      url: '/gallery/gallery-1.jpg',
+      url: '/fasadmalning.png',
       alt: 'J Måleri Åhus fasadmålning och utvändigt måleriarbete',
     },
     {
@@ -139,7 +139,7 @@ const images: SiteImages = {
   portfolio: [
     {
       image: {
-        url: '/gallery/gallery-1.jpg',
+        url: '/fasadmalning.png',
         alt: 'Fasadmålning villa i Åhus',
       },
       title: 'Fasadmålning & Träskydd Villa',
