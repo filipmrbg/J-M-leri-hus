@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Phone, MapPin, Mail, ShieldCheck, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { Phone, MapPin, Mail, ShieldCheck } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import FAQAccordion from '../components/FAQAccordion';
 import CTABanner from '../components/CTABanner';
@@ -64,34 +64,6 @@ export default function Contact() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('sending');
-    setErrorMsg('');
-    try {
-      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
-      const res = await fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify({ name, email, phone, message, source: 'contact' }),
-      });
-      const data = await res.json();
-      if (!res.ok || data.error) {
-        throw new Error(data.error || 'Något gick fel.');
-      }
-      setStatus('success');
-      setName(''); setEmail(''); setPhone(''); setMessage('');
-    } catch (err) {
-      setStatus('error');
-      setErrorMsg(err instanceof Error ? err.message : 'Något gick fel.');
-    }
-  };
 
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -280,7 +252,10 @@ export default function Contact() {
                   Skicka ett meddelande
                 </h2>
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={(e) => {
+                  e.preventDefault();
+                  alert('Tack för ditt meddelande! Vi återkommer inom kort.');
+                }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="contact-form-row">
                     <div>
                       <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '8px' }}>
@@ -348,7 +323,6 @@ export default function Contact() {
 
                   <button
                     type="submit"
-                    disabled={status === 'sending'}
                     style={{
                       background: 'var(--color-primary)',
                       color: '#ffffff',
@@ -357,65 +331,17 @@ export default function Contact() {
                       borderRadius: 'var(--border-radius-pill)',
                       fontSize: '1rem',
                       fontWeight: 700,
-                      cursor: status === 'sending' ? 'not-allowed' : 'pointer',
+                      cursor: 'pointer',
                       width: '100%',
                       fontFamily: 'var(--font-family)',
                       boxShadow: '0 4px 16px rgba(194, 132, 71, 0.35)',
                       transition: 'all 0.3s ease',
-                      opacity: status === 'sending' ? 0.7 : 1,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '8px',
                     }}
                     onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-2px)')}
                     onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
                   >
-                    {status === 'sending' ? (
-                      <>
-                        <Loader2 size={18} className="animate-spin" />
-                        Skickar...
-                      </>
-                    ) : (
-                      'Skicka meddelande'
-                    )}
+                    Skicka meddelande
                   </button>
-
-                  {status === 'success' && (
-                    <div style={{
-                      marginTop: '16px',
-                      padding: '14px 18px',
-                      borderRadius: '12px',
-                      background: 'rgba(34, 197, 94, 0.1)',
-                      border: '1px solid rgba(34, 197, 94, 0.3)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                    }}>
-                      <CheckCircle size={20} color="#16a34a" />
-                      <span style={{ color: '#16a34a', fontSize: '0.9rem', fontWeight: 600 }}>
-                        Tack för ditt meddelande! Vi återkommer inom kort.
-                      </span>
-                    </div>
-                  )}
-
-                  {status === 'error' && (
-                    <div style={{
-                      marginTop: '16px',
-                      padding: '14px 18px',
-                      borderRadius: '12px',
-                      background: 'rgba(239, 68, 68, 0.1)',
-                      border: '1px solid rgba(239, 68, 68, 0.3)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '10px',
-                    }}>
-                      <AlertCircle size={20} color="#dc2626" />
-                      <span style={{ color: '#dc2626', fontSize: '0.9rem', fontWeight: 600 }}>
-                        {errorMsg || 'Något gick fel. Försök igen eller ring oss.'}
-                      </span>
-                    </div>
-                  )}
                 </form>
               </div>
             </ScrollReveal>
