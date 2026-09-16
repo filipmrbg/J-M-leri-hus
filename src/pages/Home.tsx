@@ -102,10 +102,12 @@ export default function Home() {
         position: 'relative',
         minHeight: '100vh',
         display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
         alignItems: 'center',
         overflow: 'hidden',
-        paddingTop: 'clamp(70px, 10vh, 110px)',
-        paddingBottom: '60px',
+        paddingTop: 'clamp(100px, 14vh, 140px)',
+        paddingBottom: 'clamp(40px, 6vh, 60px)',
         boxSizing: 'border-box',
       }}>
         {/* Hero Background Slideshow (Nelhages-inspired) */}
@@ -161,7 +163,7 @@ export default function Home() {
           zIndex: 1,
         }} />
 
-        <div style={{ ...container, position: 'relative', zIndex: 2, width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ ...container, position: 'relative', zIndex: 2, width: '100%', display: 'flex', justifyContent: 'center', margin: 'auto 0' }}>
           <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -170,12 +172,12 @@ export default function Home() {
             maxWidth: '760px',
             margin: '0 auto',
             paddingTop: '0px',
-            paddingBottom: '30px',
+            paddingBottom: '20px',
           }}>
             {/* Prominent Center Brand Logo (Reference Layout) */}
             <ScrollReveal animation="fade-down" delay={0} duration={0.7}>
               <div style={{
-                marginBottom: '18px',
+                marginBottom: '16px',
                 display: 'flex',
                 justifyContent: 'center',
               }}>
@@ -183,7 +185,7 @@ export default function Home() {
                   src={images.logo.url}
                   alt={images.logo.alt}
                   style={{
-                    width: 'clamp(175px, 45vw, 255px)',
+                    width: 'clamp(130px, 16vw, 175px)',
                     height: 'auto',
                     display: 'block',
                     filter: 'drop-shadow(0 8px 30px rgba(0, 0, 0, 0.95))',

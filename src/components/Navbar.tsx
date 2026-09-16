@@ -136,16 +136,18 @@ export default function Navbar() {
           right: 0,
           zIndex: 1000,
           padding: scrolled
-            ? '12px clamp(20px, 4vw, 40px)'
-            : '24px clamp(20px, 4vw, 40px)',
+            ? '10px clamp(20px, 4vw, 40px)'
+            : '16px clamp(20px, 4vw, 40px)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
+          minHeight: scrolled ? '62px' : '74px',
+          boxSizing: 'border-box',
           background: scrolled ? 'rgba(26,31,46,0.97)' : 'rgba(26,31,46,0)',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(12px)' : 'none',
           boxShadow: scrolled ? '0 2px 24px rgba(0,0,0,0.3)' : 'none',
-          transition: 'background 0.5s cubic-bezier(0.16, 1, 0.3, 1), padding 0.5s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), -webkit-backdrop-filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          transition: 'background 0.4s ease, padding 0.4s ease, min-height 0.4s ease, box-shadow 0.4s ease',
         }}
       >
         {/* Logo — hidden at the very top of startsidan, smoothly fades in on scroll */}
@@ -163,6 +165,7 @@ export default function Navbar() {
             transform: showNavbarLogo ? 'scale(1) translateY(0)' : 'scale(0.85) translateY(-4px)',
             transformOrigin: 'left center',
             transition: 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+            visibility: showNavbarLogo ? 'visible' : 'hidden',
           }}
         >
           <img
@@ -176,7 +179,8 @@ export default function Navbar() {
         <div className="nav-pill" style={{
           position: 'absolute',
           left: '50%',
-          transform: 'translateX(-50%)',
+          top: '50%',
+          transform: 'translate(-50%, -50%)',
           borderRadius: 'var(--border-radius-pill)',
           background: 'rgba(255,255,255,0.06)',
           border: '1px solid rgba(255,255,255,0.08)',
@@ -560,8 +564,8 @@ export default function Navbar() {
           height: 15px;
         }
         .nav-logo {
-          height: 185px;
-          max-height: 26vh;
+          height: 56px;
+          max-height: 56px;
           width: auto;
           display: block;
           object-fit: contain;
@@ -570,10 +574,11 @@ export default function Navbar() {
           border-radius: 0;
           box-shadow: none;
           filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.55));
-          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .nav-logo.scrolled {
-          height: 120px;
+          height: 46px;
+          max-height: 46px;
           background-color: transparent;
           padding: 0;
           border-radius: 0;
