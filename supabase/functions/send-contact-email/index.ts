@@ -131,7 +131,7 @@ Deno.serve(async (req: Request) => {
 
   try {
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
-    const RECIPIENT_EMAIL = Deno.env.get("CONTACT_RECIPIENT_EMAIL") || "Info@jmaleri.se";
+    const RECIPIENT_EMAIL = Deno.env.get("CONTACT_RECIPIENT_EMAIL") || "f.bjorgaas@gmail.com";
 
     if (!RESEND_API_KEY) {
       return new Response(
@@ -186,7 +186,7 @@ Deno.serve(async (req: Request) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "J Måleri Åhus <no-reply@resend.dev>",
+        from: "Kontaktformulär <info@contact.bgbygger.se>",
         to: [RECIPIENT_EMAIL],
         subject,
         html,
