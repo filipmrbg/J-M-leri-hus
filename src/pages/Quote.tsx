@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, Clock, Award, Send } from 'lucide-react';
+import { ShieldCheck, Clock, Award, Send, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 import FAQAccordion from '../components/FAQAccordion';
 import CTABanner from '../components/CTABanner';
@@ -61,6 +61,34 @@ export default function Quote() {
   const [phone, setPhone]     = useState('');
   const [service, setService] = useState('');
   const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMsg('');
+    try {
+      const apiUrl = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-contact-email`;
+      const res = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify({ name, email, phone, message, service, source: 'quote' }),
+      });
+      const data = await res.json();
+      if (!res.ok || data.error) {
+        throw new Error(data.error || 'Något gick fel.');
+      }
+      setStatus('success');
+      setName(''); setEmail(''); setPhone(''); setService(''); setMessage('');
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg(err instanceof Error ? err.message : 'Något gick fel.');
+    }
+  };
 
   return (
     <main style={{ fontFamily: 'var(--font-family)' }}>
@@ -138,7 +166,7 @@ export default function Quote() {
                   Vi återkopplar vanligtvis samma eller nästkommande arbetsdag.
                 </p>
 
-                <form onSubmit={(e) => { e.preventDefault(); alert('Tack för din förfrågan! Vi kontaktar dig inom 24 timmar.'); }}>
+                <form onSubmit={handleSubmit}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="quote-form-row">
                     <div>
                       <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-text-dark)', marginBottom: '6px' }}>
@@ -227,6 +255,7 @@ export default function Quote() {
 
                   <button
                     type="submit"
+                    disabled={status === 'sending'}
                     style={{
                       background: 'var(--color-primary)',
                       color: '#ffffff',
@@ -235,7 +264,7 @@ export default function Quote() {
                       borderRadius: 'var(--border-radius-pill)',
                       fontSize: '1rem',
                       fontWeight: 700,
-                      cursor: 'pointer',
+                      cursor: status === 'sending' ? 'not-allowed' : 'pointer',
                       width: '100%',
                       fontFamily: 'var(--font-family)',
                       boxShadow: '0 4px 16px rgba(194, 132, 71, 0.35)',
@@ -244,13 +273,59 @@ export default function Quote() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       gap: '8px',
+                      opacity: status === 'sending' ? 0.7 : 1,
                     }}
                     onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-2px)')}
                     onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
                   >
-                    <Send size={18} />
-                    Skicka offertförfrågan
+                    {status === 'sending' ? (
+                      <>
+                        <Loader2 size={18} className="animate-spin" />
+                        Skickar...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={18} />
+                        Skicka offertförfrågan
+                      </>
+                    )}
                   </button>
+
+                  {status === 'success' && (
+                    <div style={{
+                      marginTop: '16px',
+                      padding: '14px 18px',
+                      borderRadius: '12px',
+                      background: 'rgba(34, 197, 94, 0.1)',
+                      border: '1px solid rgba(34, 197, 94, 0.3)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                    }}>
+                      <CheckCircle size={20} color="#16a34a" />
+                      <span style={{ color: '#16a34a', fontSize: '0.9rem', fontWeight: 600 }}>
+                        Tack för din förfrågan! Vi kontaktar dig inom 24 timmar.
+                      </span>
+                    </div>
+                  )}
+
+                  {status === 'error' && (
+                    <div style={{
+                      marginTop: '16px',
+                      padding: '14px 18px',
+                      borderRadius: '12px',
+                      background: 'rgba(239, 68, 68, 0.1)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                    }}>
+                      <AlertCircle size={20} color="#dc2626" />
+                      <span style={{ color: '#dc2626', fontSize: '0.9rem', fontWeight: 600 }}>
+                        {errorMsg || 'Något gick fel. Försök igen eller ring oss.'}
+                      </span>
+                    </div>
+                  )}
                 </form>
               </div>
             </ScrollReveal>
