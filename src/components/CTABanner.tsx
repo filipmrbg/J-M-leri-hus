@@ -171,7 +171,7 @@ export default function CTABanner({ heading = defaultHeading, checkItems = defau
               </ul>
 
               <div className="cta-btn-wrap" style={{ display: 'inline-block' }}>
-                <Button variant="primary" size="lg" href="/offert">
+                <Button variant="primary" size="lg" href="/kontakt">
                   Kom igång
                 </Button>
               </div>

@@ -252,7 +252,7 @@ export default function Home() {
                 flexWrap: 'wrap',
                 width: '100%',
               }}>
-                <Button variant="primary" size="lg" href="/offert">
+                <Button variant="primary" size="lg" href="/kontakt">
                   Begär kostnadsfri offert
                 </Button>
 
@@ -659,7 +659,7 @@ export default function Home() {
             }}>
               Vi återkopplar med en kostnadsfri offert inom 24 timmar.
             </p>
-            <Button variant="primary" size="lg" href="/offert">
+            <Button variant="primary" size="lg" href="/kontakt">
               Begär offert
             </Button>
           </ScrollReveal>

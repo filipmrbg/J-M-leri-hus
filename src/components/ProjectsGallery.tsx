@@ -179,7 +179,7 @@ export default function ProjectsGallery() {
       <div style={{ textAlign: 'center', marginTop: '36px' }}>
         <ScrollReveal animation="fade-up" delay={100}>
           <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: '12px' }}>
-            <Button variant="primary" href="/offert" size="lg">
+            <Button variant="primary" href="/kontakt" size="lg">
               Begär offert för ditt projekt
             </Button>
             <span style={{ fontSize: '0.85rem', color: 'var(--color-gray-600)' }}>
