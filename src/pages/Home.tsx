@@ -416,7 +416,7 @@ export default function Home() {
                 boxShadow: '0 12px 36px rgba(15, 23, 42, 0.08)',
                 border: '1px solid #e2e8f0',
                 background: '#f8fafc',
-                height: '380px',
+                height: '460px',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -424,11 +424,12 @@ export default function Home() {
               }}>
                 <img
                   src={images.about.hero.url}
-                  alt="J Måleri Åhus"
+                  alt={images.about.hero.alt || 'J Måleri Åhus'}
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
+                    objectPosition: 'center 75%',
                     borderRadius: '24px',
                     display: 'block',
                   }}

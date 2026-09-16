@@ -138,7 +138,7 @@ const images: SiteImages = {
   about: {
     hero: {
       url: '/about-us.jpg',
-      alt: 'J Måleri Åhus verksamhet och måleriarbete i Åhus/Kristianstad med omnejd',
+      alt: 'Joakim från J Måleri Åhus vid firmabilen i Åhus/Kristianstad med omnejd',
     },
     teamMember: {
       url: '/logo.png',

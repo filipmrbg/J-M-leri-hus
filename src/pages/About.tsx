@@ -57,7 +57,7 @@ export default function About() {
         <div style={{ ...container, maxWidth: '960px' }}>
           <div className="about-content-grid" style={{
             display: 'grid',
-            gridTemplateColumns: '260px 1fr',
+            gridTemplateColumns: '280px 1fr',
             gap: '48px',
             alignItems: 'start',
           }}>
@@ -72,18 +72,19 @@ export default function About() {
               }}>
                 <img
                   src={images.about.hero.url || '/about-us.jpg'}
-                  alt="J Måleri Åhus"
+                  alt={images.about.hero.alt || 'Joakim – J Måleri Åhus'}
                   loading="eager"
                   decoding="async"
                   style={{
                     width: '100%',
-                    maxWidth: '260px',
-                    height: 'auto',
+                    maxWidth: '280px',
+                    aspectRatio: '4 / 5',
                     objectFit: 'cover',
-                    borderRadius: '20px',
+                    objectPosition: 'center 75%',
+                    borderRadius: '24px',
                     padding: '0',
                     display: 'block',
-                    boxShadow: '0 12px 32px rgba(0,0,0,0.12)',
+                    boxShadow: '0 12px 36px rgba(15, 23, 42, 0.08)',
                     border: '1px solid #e2e8f0',
                   }}
                 />
