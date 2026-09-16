@@ -101,58 +101,54 @@ export default function About() {
                   letterSpacing: '-0.03em',
                   margin: '0 0 20px 0',
                 }}>
-                  Professionellt måleri med passion, precision och yrkesstolthet
+                  Måleri där detaljerna gör hela skillnaden
                 </h2>
               </ScrollReveal>
               <ScrollReveal animation="fade-up" delay={100}>
                 <div>
                   <p style={{
                     color: 'var(--color-gray-600)',
-                    fontSize: '1.05rem',
+                    fontSize: '1.08rem',
                     lineHeight: 1.8,
                     margin: '0 0 20px 0',
                     fontWeight: 500,
                   }}>
-                    J Måleri Åhus erbjuder ett komplett utbud av tjänster inom invändigt och utvändigt måleri, tapetsering, spackling och fasadrenovering. Med bas i Åhus verkar vi i Kristianstad, Yngsjö, Degeberga, Bromölla och närområdet för både privatpersoner och företag.
+                    Jag heter Joakim och driver J Måleri Åhus – ett företag med över 15 års erfarenhet inom måleribranschen.
                   </p>
                   
-                  <h3 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-text-dark)', margin: '28px 0 12px 0' }}>
-                    Hemligheten bakom ett perfekt resultat – noggrant underarbete
-                  </h3>
                   <p style={{
                     color: 'var(--color-gray-600)',
-                    fontSize: '0.98rem',
-                    lineHeight: 1.8,
-                    margin: '0 0 16px 0',
-                  }}>
-                    Ett vackert och hållbart måleriarbete handlar till största delen om vad som görs innan färgen stryks på. Vi lägger stor omsorg vid spackling, slipning, grundmålning och noggrann maskering så att slutresultatet blir jämnt och knivskarpt.
-                  </p>
-                  <p style={{
-                    color: 'var(--color-gray-600)',
-                    fontSize: '0.98rem',
+                    fontSize: '1rem',
                     lineHeight: 1.8,
                     margin: '0 0 24px 0',
                   }}>
-                    När du anlitar J Måleri Åhus får du en trygg kontaktperson genom hela projektet. Vi sätter stor ära i att hålla utlovade tider, täcka och lämna snyggt och städat efter oss samt leverera resultat som håller i många år framöver.
+                    Det jag uppskattar mest med måleriet är detaljerna. Det är ofta där den stora skillnaden sitter. Därför lägger jag alltid ner det lilla extra för att skapa ett resultat som håller högsta kvalitet – både i utförandet och i helhetsintrycket.
                   </p>
 
-                  {/* Founder Quote Card */}
+                  {/* Vision Card */}
                   <div style={{
                     background: 'rgba(194, 132, 71, 0.08)',
                     borderLeft: '4px solid var(--color-primary)',
                     padding: '24px 28px',
                     borderRadius: '0 16px 16px 0',
-                    margin: '32px 0 36px 0',
+                    margin: '28px 0 36px 0',
                   }}>
                     <p style={{
                       color: 'var(--color-text-dark)',
-                      fontSize: '1.05rem',
-                      fontStyle: 'italic',
-                      fontWeight: 500,
-                      lineHeight: 1.7,
+                      fontSize: '1.15rem',
+                      fontWeight: 700,
+                      lineHeight: 1.5,
                       margin: '0 0 10px 0',
                     }}>
-                      "Vi utför alla måleriuppdrag med största yrkesstolthet. Med personlig service, noggrant underarbete och högkvalitativa färgval ser vi till att dina ytor håller och ser fantastiska ut i många år framöver."
+                      Min vision är enkel: ingen kund ska känna sig missnöjd.
+                    </p>
+                    <p style={{
+                      color: 'var(--color-gray-600)',
+                      fontSize: '1rem',
+                      lineHeight: 1.7,
+                      margin: '0 0 14px 0',
+                    }}>
+                      Med noggrannhet, personligt engagemang och ett stort fokus på kvalitet vill jag erbjuda ett måleri där du som kund kan känna dig trygg från första kontakt till färdigt resultat.
                     </p>
                     <span style={{
                       color: 'var(--color-primary)',
