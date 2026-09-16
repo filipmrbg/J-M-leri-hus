@@ -38,7 +38,7 @@ const homeFaqItems = [
   },
   {
     question: 'Lämnar ni garanti på utfört måleriarbete?',
-    answer: 'Ja, vi arbetar alltid enligt gällande branschstandard och lämnar fullständiga garantier på både utfört arbete och material.',
+    answer: 'Ja, vi arbetar alltid enligt gällande branschstandard och lämnar garanti på utfört arbete. Garanti på material och färg lämnas av respektive återförsäljare/tillverkare.',
   },
   {
     question: 'Hjälper ni till med både små och stora måleriprojekt?',

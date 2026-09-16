@@ -276,8 +276,8 @@ export default function Quote() {
                   {[
                     {
                       icon: ShieldCheck,
-                      title: 'Trygghetsgaranti',
-                      desc: 'Fullständig garanti på allt utfört måleriarbete och material enligt gällande branschstandard.',
+                      title: 'Garanti på utfört arbete',
+                      desc: 'Garanti på allt utfört måleriarbete enligt gällande branschstandard. Garanti på färg och material lämnas av återförsäljaren/tillverkaren.',
                     },
                     {
                       icon: Clock,

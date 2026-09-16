@@ -122,6 +122,22 @@ const images: SiteImages = {
       url: '/gallery/gallery-6.jpg',
       alt: 'J Måleri Åhus färdigställt måleriprojekt i Åhus/Kristianstad med omnejd',
     },
+    {
+      url: 'https://i.imgur.com/Q2txUmZ.jpeg',
+      alt: 'J Måleri Åhus måleriarbete i strandvilla med ryggåstak i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/knGyQQ0.jpeg',
+      alt: 'J Måleri Åhus målning av kök och öppen planlösning i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/7Ue2OVi.png',
+      alt: 'J Måleri Åhus mönsterpassad randig tapetsering i trapphus i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: 'https://i.imgur.com/ONsAInt.png',
+      alt: 'J Måleri Åhus snickerimålning och pärlspont i Åhus/Kristianstad med omnejd',
+    },
   ],
 
   cta: {
@@ -244,6 +260,38 @@ const images: SiteImages = {
       },
       title: 'Villamålning & Renovering',
       category: 'Inomhusmåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/Q2txUmZ.jpeg',
+        alt: 'Måleriarbete i modern strandvilla med ryggåstak och havsutsikt i Åhus',
+      },
+      title: 'Havsnära Villa & Ryggåstak',
+      category: 'Inomhusmåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/knGyQQ0.jpeg',
+        alt: 'Målning av kök och öppen planlösning i villa i Åhus',
+      },
+      title: 'Kök & Öppen Planlösning',
+      category: 'Inomhusmåleri',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/7Ue2OVi.png',
+        alt: 'Mönsterpassad randig tapetsering i trapphus i Åhus',
+      },
+      title: 'Randig Tapetsering i Trapphus',
+      category: 'Tapetsering',
+    },
+    {
+      image: {
+        url: 'https://i.imgur.com/ONsAInt.png',
+        alt: 'Snickerimålning av skåp och pärlspont i varm ockragul ton i Åhus',
+      },
+      title: 'Pärlspont & Skåpmålning',
+      category: 'Snickerimåleri',
     },
   ],
 };
