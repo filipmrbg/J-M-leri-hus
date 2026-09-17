@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Star,
   Phone,
   MapPin,
   Paintbrush,
@@ -11,7 +10,6 @@ import {
 import ScrollReveal from '../components/ScrollReveal';
 import Button from '../components/Button';
 import CTABanner from '../components/CTABanner';
-import ReviewCard from '../components/ReviewCard';
 import SocialBanner from '../components/SocialBanner';
 import ProjectsGallery from '../components/ProjectsGallery';
 import FAQAccordion from '../components/FAQAccordion';
@@ -666,119 +664,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SECTION 7: KUNDRECENSIONER ──────────────────────────── */}
-      <section style={{ background: 'var(--color-light)', padding: 'clamp(60px, 8vw, 100px) 0' }}>
-        <div style={container}>
-          {/* Clean Authentic Split-Header */}
-          <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'flex-end',
-            flexWrap: 'wrap',
-            gap: '24px',
-            marginBottom: '44px',
-          }}>
-            <div>
-              <ScrollReveal animation="fade-right">
-                <span style={{
-                  color: 'var(--color-primary)',
-                  fontWeight: 700,
-                  fontSize: '0.82rem',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                  display: 'block',
-                  marginBottom: '8px',
-                }}>
-                  Kundomdömen
-                </span>
-                <h2 style={{
-                  color: 'var(--color-text-dark)',
-                  fontWeight: 800,
-                  fontSize: 'clamp(1.9rem, 3.4vw, 2.6rem)',
-                  letterSpacing: '-0.025em',
-                  margin: 0,
-                  lineHeight: 1.2,
-                }}>
-                  Vad säger våra kunder?
-                </h2>
-              </ScrollReveal>
-            </div>
-
-            <div>
-              <ScrollReveal animation="fade-left" delay={100}>
-                <div style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  fontSize: '0.92rem',
-                  color: '#4b5563',
-                  fontWeight: 500,
-                  background: '#ffffff',
-                  padding: '10px 18px',
-                  borderRadius: '50px',
-                  border: '1px solid #e2e8f0',
-                  boxShadow: '0 2px 8px rgba(15, 23, 42, 0.04)',
-                }}>
-                  <svg viewBox="0 0 24 24" width="18" height="18" style={{ flexShrink: 0 }}>
-                    <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v3.92h6.69a5.74 5.74 0 0 1-2.49 3.77v3.13h4.01c2.34-2.16 3.69-5.32 3.69-8.75z" />
-                    <path fill="#34A853" d="M12 24c3.24 0 5.97-1.08 7.96-2.91l-4.01-3.13c-1.11.75-2.53 1.19-3.95 1.19-3.04 0-5.61-2.05-6.53-4.82H1.31v3.23A12 12 0 0 0 12 24z" />
-                    <path fill="#FBBC05" d="M5.47 14.33A7.16 7.16 0 0 1 5 12c0-.8.14-1.58.39-2.33V6.44H1.31A11.96 11.96 0 0 0 0 12c0 2.05.52 4 1.31 5.67l4.16-3.34z" />
-                    <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.22 0 12 0A12 12 0 0 0 1.31 6.44l4.16 3.23a7.18 7.18 0 0 1 6.53-4.92z" />
-                  </svg>
-                  <span style={{ fontWeight: 700, color: '#111827' }}>5.0 / 5</span>
-                  <div style={{ display: 'flex', gap: '2px' }}>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} size={15} fill="#FBBC05" color="#FBBC05" />
-                    ))}
-                  </div>
-                  <span style={{ color: 'var(--color-gray-600)', fontSize: '0.85rem' }}>(Omdömen i Åhus och Kristianstad)</span>
-                </div>
-              </ScrollReveal>
-            </div>
-          </div>
-
-          <div className="reviews-grid">
-            {[
-              {
-                name: 'Johan E.',
-                location: 'Åhus',
-                text: 'Vi anlitade J Måleri Åhus för ommålning av hela nedervåningen inklusive spackling och målning i vardagsrummet. Otroligt proffsigt bemötande av Joakim, raka besked och fantastiskt resultat med knivskarpa linjer. Rekommenderas varmt!',
-                stars: 5,
-                date: 'för 2 veckor sedan',
-                authorSub: 'Lokal guide • 14 omdömen',
-                avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=120&h=120'
-              },
-              {
-                name: 'Karin M.',
-                location: 'Kristianstad',
-                text: 'J Måleri Åhus hjälpte oss med utvändig fasadmålning av villan och garaget. Från grundlig tvätt och skrapning till två strykningar flöt allt på helt enligt tidsplanen. Mycket noggranna hantverkare som lämnade tomten skinande ren.',
-                stars: 5,
-                date: 'för en månad sedan',
-                authorSub: '8 omdömen',
-                avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=120&h=120'
-              },
-              {
-                name: 'Markus L.',
-                location: 'Yngsjö',
-                text: 'Toppklassigt måleriarbete vid vår renovering. J Måleri Åhus levererade perfekt finish på både väggar, tak och snickerier. Tryggt, prisvärt och med full koll på ROT avdraget!',
-                stars: 5,
-                date: 'för 2 månader sedan',
-                authorSub: 'Lokal guide • 19 omdömen',
-                avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=120&h=120'
-              },
-            ].map((review, i) => {
-              const delay = i * 150;
-              return (
-                <ScrollReveal key={i} animation="fade-up" delay={delay}>
-                  <ReviewCard review={review} />
-                </ScrollReveal>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 8: VANLIGA FRÅGOR (FAQ - DARK CONTRAST BREAK) ── */}
+      {/* ── SECTION 7: VANLIGA FRÅGOR (FAQ - DARK CONTRAST BREAK) ── */}
       <section style={{
         background: '#0f172a',
         padding: 'clamp(70px, 9vw, 110px) 0',
