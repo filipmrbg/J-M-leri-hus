@@ -345,6 +345,7 @@ export function ServiceIcon({
     case 'renovering':
       return <PaintRollerIcon color={color} size={size} className={className} style={style} />;
     case 'fasadmalning':
+    case 'utvandigt-maleri':
     case 'nybyggnation':
       return <FacadeIcon color={color} size={size} className={className} style={style} />;
     case 'tapetsering':

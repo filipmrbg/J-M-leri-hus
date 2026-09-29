@@ -68,18 +68,18 @@ Vi lägger största vikt vid ett gediget underarbete med spackling, bredspacklin
     title: 'Fasadmålning',
     shortDescription: 'Hållbar fasadmålning, fönstermålning och trävård som skyddar din fastighet mot väder och vind i många år framöver.',
     heroText: 'Ge huset ett långvarigt skydd och ett vackert lyft med professionell fasadmålning i Åhus/Kristianstad med omnejd.',
-    detailedDescription: `En väl underhållen fasad skyddar fastigheten mot fukt, röta och väderpåverkan. J Måleri Åhus utför kompletta utvändiga måleriarbeten på villor, fritidshus, garage och fastigheter i Åhus och Kristianstad med omnejd.
+    detailedDescription: `En väl underhållen fasad och nymålade detaljer skyddar fastigheten mot fukt, röta och väderpåverkan. J Måleri Åhus utför kompletta utvändiga måleriarbeten på villor, fritidshus, garage och fastigheter i Åhus och Kristianstad med omnejd.
 
-Vi börjar alltid med noggrann fasadtvätt, skrapning av lös färg och grundoljning innan fasaden färdigstryks med premiumfärg anpassad för vårt klimat.`,
-    heroImage: '/fasadmalning.png',
-    image: '/fasadmalning.png',
+Vi börjar alltid med noggrann fasadtvätt, skrapning av lös färg och grundoljning innan fasaden färdigstryks med slitstark kvalitetsfärg anpassad för vårt skånska klimat.`,
+    heroImage: '/fasad-maleri-ahus.jpg',
+    image: '/fasad-maleri-ahus.jpg',
     href: '/tjanster#fasadmalning',
     tag: 'Utvändigt Måleri',
     badge: 'Kvalitetsfärg',
     highlights: [
-      'Fasadmålning av träfasad och puts',
-      'Fönstermålning och renovering av vindskivor',
-      'Fasadtvätt, algbehandling och skrapning',
+      'Fasadmålning av träfasad, gavel och panel',
+      'Fönstermålning, foder och vindskivor',
+      'Fasadtvätt, algbehandling och grundligt förarbete',
       'Målning av garage, attefallshus och staket',
     ],
     faq: [

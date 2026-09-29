@@ -15,8 +15,12 @@
   <link rel="prefetch" href="/hero-slides/slide-3.webp" />
   <link rel="prefetch" href="/hero-slides/slide-4.webp" />
 
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/filipmrbg/J-M-leri-hus/main/public/favicon.png" />
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/filipmrbg/J-M-leri-hus/main/public/apple-touch-icon.png" />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="canonical" href="https://jmaleri.se" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -112,7 +116,51 @@
         "opens": "07:00",
         "closes": "17:00"
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5"
+      },
       "legalName": "J Måleri Åhus"
+    }
+  </script>
+
+  <!-- JSON-LD: SiteNavigationElement for Google Sitelinks -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://jmaleri.se/#website",
+          "url": "https://jmaleri.se",
+          "name": "J Måleri Åhus"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Kontakt",
+          "description": "Kontakta J Måleri Åhus för rådgivning och fri offert",
+          "url": "https://jmaleri.se/kontakt"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Våra Tjänster",
+          "description": "Invändigt måleri, utvändigt måleri och tapetsering",
+          "url": "https://jmaleri.se/tjanster"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Om oss",
+          "description": "Läs om J Måleri Åhus med över 15 års branscherfarenhet",
+          "url": "https://jmaleri.se/om-oss"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Begär offert",
+          "description": "Kostnadsfri målerioffert inom 24 timmar",
+          "url": "https://jmaleri.se/kontakt"
+        }
+      ]
     }
   </script>
 </head>

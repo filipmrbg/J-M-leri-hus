@@ -22,7 +22,8 @@ export default function ServicesOverview() {
 
   useEffect(() => {
     if (hash) {
-      const id = hash.replace('#', '');
+      let id = hash.replace('#', '');
+      if (id === 'fasadmalning') id = 'utvandigt-maleri';
       const attempt = () => {
         const element = document.getElementById(id);
         if (element) {

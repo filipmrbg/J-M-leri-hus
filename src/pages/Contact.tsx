@@ -301,7 +301,7 @@ export default function Contact() {
                       style={{ ...inputStyle, cursor: 'pointer' }} onFocus={focusInput} onBlur={blurInput}>
                       <option value="">Välj tjänst...</option>
                       <option value="Invändigt Måleri & Spackling">Invändigt Måleri & Spackling</option>
-                      <option value="Fasadmålning">Fasadmålning</option>
+                      <option value="Utvändigt Måleri & Fasad">Utvändigt Måleri & Fasad</option>
                       <option value="Tapetsering">Tapetsering</option>
                       <option value="Fönstermålning">Fönstermålning</option>
                       <option value="Trävård & Snickerier">Trävård & Snickerier</option>

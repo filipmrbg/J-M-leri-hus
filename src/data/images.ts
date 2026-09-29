@@ -63,8 +63,12 @@ const images: SiteImages = {
       url: '/gallery/gallery-2.jpg',
       alt: 'Invändigt måleri och tapetsering i Åhus/Kristianstad med omnejd',
     },
+    'utvandigt-maleri': {
+      url: '/fasad-maleri-ahus.jpg',
+      alt: 'Utvändigt måleri och fasadrenovering i Åhus/Kristianstad med omnejd',
+    },
     'fasadmalning': {
-      url: '/fasadmalning.png',
+      url: '/fasad-maleri-ahus.jpg',
       alt: 'Utvändigt måleri och fasadrenovering i Åhus/Kristianstad med omnejd',
     },
     'tapetsering': {
@@ -77,6 +81,10 @@ const images: SiteImages = {
     {
       url: 'https://i.imgur.com/omZyW82.png',
       alt: 'J Måleri Åhus mönstertapetsering i Åhus/Kristianstad med omnejd',
+    },
+    {
+      url: '/fasad-maleri-ahus.jpg',
+      alt: 'J Måleri Åhus utvändigt måleri och fasadmålning i Åhus/Kristianstad med omnejd',
     },
     {
       url: 'https://i.imgur.com/w7Imch0.png',
@@ -103,7 +111,7 @@ const images: SiteImages = {
       alt: 'J Måleri Åhus noggrant underarbete och finish i Åhus/Kristianstad med omnejd',
     },
     {
-      url: '/fasadmalning.png',
+      url: '/fasad-maleri-ahus.jpg',
       alt: 'J Måleri Åhus fasadmålning och utvändigt måleriarbete i Åhus/Kristianstad med omnejd',
     },
     {
@@ -183,6 +191,14 @@ const images: SiteImages = {
     },
     {
       image: {
+        url: '/fasad-maleri-ahus.jpg',
+        alt: 'Utvändigt måleri och fasadmålning av trävilla i Åhus/Kristianstad med omnejd',
+      },
+      title: 'Utvändigt Måleri & Fasad',
+      category: 'Utvändigt måleri',
+    },
+    {
+      image: {
         url: 'https://i.imgur.com/w7Imch0.png',
         alt: 'Invändigt måleri och finish i Åhus/Kristianstad med omnejd',
       },
@@ -231,11 +247,11 @@ const images: SiteImages = {
     },
     {
       image: {
-        url: '/fasadmalning.png',
+        url: '/fasad-maleri-ahus.jpg',
         alt: 'Fasadmålning villa i Åhus/Kristianstad med omnejd',
       },
       title: 'Fasadmålning & Träskydd Villa',
-      category: 'Fasadmålning',
+      category: 'Utvändigt måleri',
     },
     {
       image: {
