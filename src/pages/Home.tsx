@@ -400,21 +400,6 @@ export default function Home() {
                     />
                   </div>
 
-                  {/* Small category tag */}
-                  {svc.tag && (
-                    <span style={{
-                      color: 'var(--color-primary)',
-                      fontSize: '0.75rem',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      display: 'block',
-                      marginBottom: '4px',
-                    }}>
-                      {svc.tag}
-                    </span>
-                  )}
-
                   {/* Title */}
                   <h3 className="service-feature-title" style={{ marginTop: 0 }}>
                     {svc.title}
