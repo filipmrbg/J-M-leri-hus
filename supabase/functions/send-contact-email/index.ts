@@ -1,5 +1,10 @@
 import { createClient } from "npm:@supabase/supabase-js@2.57.4";
 
+const supabaseAdmin = createClient(
+  Deno.env.get("SUPABASE_URL")!,
+  Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!,
+);
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
@@ -145,8 +150,8 @@ Deno.serve(async (req: Request) => {
     const email = (body.email || "").trim();
     const phone = (body.phone || "").trim();
     const message = (body.message || "").trim();
-    const service = body.service ? (body.service).trim() : undefined;
-    const source = body.source || "contact";
+    const service = body.service ? body.service.trim() : undefined;
+    const source = body.source === "quote" ? "quote" : "contact";
 
     if (!name || !email || !phone || !message) {
       return new Response(
@@ -173,6 +178,26 @@ Deno.serve(async (req: Request) => {
     const submissionId = crypto.randomUUID();
     const now = new Date();
     const dateStr = formatSwedishDateTime(now);
+
+    const { error: submissionError } = await supabaseAdmin
+      .from("contact_submissions")
+      .insert({
+        id: submissionId,
+        name,
+        email,
+        phone,
+        service,
+        message,
+        source,
+      });
+
+    if (submissionError) {
+      console.error("Contact submission storage error:", submissionError);
+      return new Response(
+        JSON.stringify({ error: "Kunde inte registrera formuläret. Försök igen senare." }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
     const subject = `"${source === "quote" ? "Offertförfrågan" : "Kontaktförfrågan"}" från ${name}`;
 
     const html = buildEmailHtml(
@@ -204,6 +229,15 @@ Deno.serve(async (req: Request) => {
     }
 
     const resendData = await resendResponse.json();
+
+    const { error: messageIdError } = await supabaseAdmin
+      .from("contact_submissions")
+      .update({ email_message_id: resendData.id })
+      .eq("id", submissionId);
+
+    if (messageIdError) {
+      console.error("Contact submission message ID update error:", messageIdError);
+    }
 
     return new Response(
       JSON.stringify({ success: true, submissionId, messageId: resendData.id }),
