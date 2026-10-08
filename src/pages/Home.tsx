@@ -11,7 +11,6 @@ import {
 import ScrollReveal from '../components/ScrollReveal';
 import Button from '../components/Button';
 import CTABanner from '../components/CTABanner';
-import ReviewCard, { Review } from '../components/ReviewCard';
 import SocialBanner from '../components/SocialBanner';
 import ProjectsGallery from '../components/ProjectsGallery';
 import FAQAccordion from '../components/FAQAccordion';
@@ -26,31 +25,6 @@ const container: React.CSSProperties = {
   margin: '0 auto',
   padding: '0 clamp(20px, 5vw, 40px)',
 };
-
-const googleReviews: Review[] = [
-  {
-    name: 'Thomas W',
-    authorSub: 'Lokal guide • Google-recension',
-    isLocalGuide: true,
-    avatarBg: '#8d6e63',
-    stars: 5,
-    text: 'Vi vill tacka Joakim och J Måleri för ett helt fantastiskt fint utfört målningsarbete. Detta omfattade samtliga fönster, fönsterkarmar samt 3 dörrar invändigt.',
-  },
-  {
-    name: 'Jesper Månsson',
-    authorSub: 'Google-recension',
-    avatarBg: '#c62828',
-    stars: 5,
-    text: 'Målade vårt nya kök. Effektiv, prisvärd och mycket trevlig att ha och göra med 👍',
-  },
-  {
-    name: 'Timmie Ekstrand',
-    authorSub: 'Google-recension',
-    avatarBg: '#37474f',
-    stars: 5,
-    text: 'Duktig och snygg kille',
-  },
-];
 
 const homeFaqItems = [
   {
@@ -766,17 +740,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Reviews Grid */}
-          <div className="reviews-grid">
-            {googleReviews.map((review, i) => (
-              <ScrollReveal key={i} animation="fade-up" delay={i * 120}>
-                <ReviewCard review={review} />
-              </ScrollReveal>
-            ))}
-          </div>
-
           {/* Elfsight Google Reviews Widget */}
-          <div className="elfsight-app-78d9c3a7-9757-440c-bcbc-1d0e14155d1c" data-elfsight-app-lazy style={{ marginTop: '40px' }} />
+          <div className="elfsight-app-78d9c3a7-9757-440c-bcbc-1d0e14155d1c" data-elfsight-app-lazy />
         </div>
       </section>
 
@@ -819,33 +784,15 @@ export default function Home() {
           align-items: flex-start;
           justify-content: center;
         }
-        .review-card-el {
-          background: var(--color-white);
-          border: 1px solid #EDE8E0;
-          border-radius: var(--border-radius-lg);
-          padding: 28px 30px;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-          transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .review-card-el:hover {
-          transform: translateY(-5px) rotate(-0.5deg);
-          box-shadow: 0 16px 40px rgba(28,21,16,0.10);
-        }
-        .step-arrow {
+.step-arrow {
           display: flex;
           align-items: center;
           justify-content: center;
           width: 80px;
           height: 70px;
         }
-        @media (max-width: 1024px) {
-          .reviews-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
         @media (max-width: 768px) {
           .two-col { grid-template-columns: 1fr !important; gap: 32px !important; }
-          .reviews-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
           .steps-grid-wrapper { flex-direction: column !important; align-items: center !important; gap: 24px !important; }
           .step-arrow {
             transform: rotate(90deg);
