@@ -774,6 +774,9 @@ export default function Home() {
               </ScrollReveal>
             ))}
           </div>
+
+          {/* Elfsight Google Reviews Widget */}
+          <div className="elfsight-app-78d9c3a7-9757-440c-bcbc-1d0e14155d1c" data-elfsight-app-lazy style={{ marginTop: '40px' }} />
         </div>
       </section>
 
